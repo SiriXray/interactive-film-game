@@ -1,0 +1,783 @@
+{
+  "manifest_version": 2,
+  "source": "codex-tianhe-market-gate-demo",
+  "production": {
+    "storyboard_target_seconds": 15,
+    "q3_clip_seconds": 5,
+    "video_method": "Each Q3 storyboard is composed from three continuous 5-second clips and concatenated locally.",
+    "image_model": "viduimage-2",
+    "video_models": [
+      "viduq3-mix",
+      "viduq3-drama"
+    ],
+    "s1_policy": "Only marked interactive nodes create a live Vidu S1 session; free dialogue builds tension and context but formal branches decide the route outcome."
+  },
+  "stories": [
+    {
+      "id": "tianhe-market-gate",
+      "title": "天河商场：地下三层的门",
+      "tagline": "白天是商场保安，零点后是两界守门人。你能陪陆沉守住这扇门，也能推他越过这扇门。",
+      "genre": "都市悬疑 / 妖市奇谭 / 守门人传承",
+      "palette": "ink",
+      "skin": "mystery-puzzle",
+      "hero": "陆沉",
+      "hero_character": "lu-chen",
+      "model_plan": "地下商场、妖市街景与多人冲突场面使用 Q3 Mix / Q3 Drama 预生成；所有高压第一视角对话、试探、父子真相确认由 S1 实时完成。",
+      "state_labels": {
+        "rule": "门规",
+        "truth": "父亲线索",
+        "balance": "两界平衡",
+        "human": "人间代价"
+      },
+      "initial_state": {
+        "rule": 0,
+        "truth": 0,
+        "balance": 0,
+        "human": 0
+      },
+      "characters": [
+        {
+          "id": "lu-chen",
+          "name": "陆沉",
+          "role": "天河商场夜班保安，新任守门人，第一次知道地下三层连着妖界。",
+          "voice": "Qiao",
+          "asset_path": "D:/AI剧/角色人物图/角色资产图，陆沉，剧本中的人物资产，需要保持形象和声音一致。，陆沉，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+          "s1_portrait_path": "D:/AI剧/角色人物图/角色资产图，陆沉，剧本中的人物资产，需要保持形象和声音一致。，陆沉，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+          "image_prompt": "Vertical 9:16 premium Chinese suspense drama character portrait, Lu Chen, a young Chinese mall security guard in his twenties with cool restrained eyes, black suit and tie beneath a security jacket, faint fatigue and alertness, dim underground mall lights, realistic cinematic lighting, no text, no watermark."
+        },
+        {
+          "id": "lu-mingchuan",
+          "name": "陆明川",
+          "role": "上一任守门人，陆沉失踪二十年的父亲，被妖王带走后仍在门后留下声音。",
+          "voice": "Dylan",
+          "asset_path": "D:/AI剧/角色人物图/角色资产图，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+          "s1_portrait_path": "D:/AI剧/角色人物图/角色资产图，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+          "image_prompt": "Vertical 9:16 premium Chinese suspense drama character portrait, Lu Mingchuan, a middle-aged Chinese man with a weathered calm face, simple dark shirt and jacket, eyes carrying long-term sacrifice and warning, warm and cold mixed lighting, realistic cinematic drama, no text, no watermark."
+        },
+        {
+          "id": "fox-boss",
+          "name": "狐妖老板娘",
+          "role": "妖市酒馆老板娘，知道门后的规矩，也知道陆明川被带走的真相。",
+          "voice": "Sohee",
+          "asset_path": "D:/AI剧/角色人物图/狐妖老板娘.png",
+          "s1_portrait_path": "D:/AI剧/角色人物图/狐妖老板娘.png",
+          "image_prompt": "Vertical 9:16 premium Chinese urban fantasy character portrait, a fox-spirit tavern owner with elegant red-black robes, fox ears, teasing smile, dangerous warmth, lantern-lit bar shelves behind her, realistic cinematic fantasy lighting, no text, no watermark."
+        },
+        {
+          "id": "little-girl",
+          "name": "门后的女孩",
+          "role": "伪装成迷路小女孩的诱饵，也是妖界试探守门人的第一层壳。",
+          "voice": "Hana",
+          "asset_path": "D:/AI剧/角色人物图/角色资产图，小女孩.png",
+          "s1_portrait_path": "D:/AI剧/角色人物图/角色资产图，小女孩.png",
+          "image_prompt": "Vertical 9:16 premium Chinese suspense drama child portrait, a little girl with wide clear eyes and ambiguous expression, ordinary cardigan and dark red shirt, dim underground passage, realistic cinematic lighting, no text, no watermark."
+        }
+      ],
+      "ending": {
+        "title": "天河商场的下一任守门人",
+        "text": "陆沉终于知道，保安从来不是这份工作的名字。守门人守住的不是一扇铁门，而是人间和妖界之间那道一旦塌了就再也补不回来的边界。",
+        "variants": [
+          {
+            "when": {
+              "balance": 3,
+              "human": 1
+            },
+            "title": "今夜先守住人间",
+            "text": "陆沉没有追进妖界，而是在零点之前重新封死铁门。父亲的声音留在门后，他的人留在人间。从此天河商场的夜班，多了一条新的门规。"
+          },
+          {
+            "when": {
+              "truth": 3
+            },
+            "title": "带着门规去找父亲",
+            "text": "陆沉记住了每一道规矩，再亲手打开那道门。妖市长街记住了新的守门人，而陆明川第一次等到了会回来找他的儿子。"
+          },
+          {
+            "when": {},
+            "title": "门还在，人也还在路上",
+            "text": "陆沉没有马上得到答案，也没有彻底失去答案。他守住了今夜，留下了线索，学会先让门不乱，再让真相慢慢回来。"
+          }
+        ]
+      },
+      "start": "tianhe-market-gate-c1-setup",
+      "nodes": {
+        "tianhe-market-gate-c1-setup": {
+          "type": "cutscene",
+          "chapter": "第1章 · 零点的铁门",
+          "title": "地下三层的哭声",
+          "narration": "陆沉入职第七天，第一次在零点后听见地下三层铁门后有小女孩哭着求救。队长警告过他，这扇门绝对不能开。",
+          "pre_generated": true,
+          "poster_path": "D:/AI剧/角色人物图/场景资产图，场景01，未明确时间，未明确空间。我叫陆沉，是天河商场的夜班保安。入职第一天，队长只交代了我一件事。，未明确空间，未明确时间，悬疑压迫，纯场景，无人镜头，中式悬疑，电影级构图，写实细节，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+          "render_plan": {
+            "target_seconds": 15,
+            "clip_seconds": 5,
+            "method": "three-continuous-q3-clips-then-concat",
+            "cast": [
+              "lu-chen",
+              "little-girl"
+            ],
+            "clips": [
+              {
+                "id": "s1",
+                "duration": 5,
+                "model": "viduq3-mix",
+                "prompt": "Segment 1 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Keep faces, costumes, underground lighting, and props consistent with the supplied references. Lu Chen patrols an empty luxury mall after midnight, flashlight crossing locked storefronts and a long dark corridor. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s2",
+                "duration": 5,
+                "model": "viduq3-mix",
+                "prompt": "Segment 2 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Continue directly from the previous segment without a reset or title card. At underground level B3, a heavy iron gate waits at the end of a wet concrete passage while a girl's crying voice echoes from behind it. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s3",
+                "duration": 5,
+                "model": "viduq3-mix",
+                "prompt": "Segment 3 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Continue directly from the previous segment without a reset or title card. Lu Chen grips his baton, remembers the captain's warning, and hesitates as the girl's plea becomes clearer behind the trembling gate. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              }
+            ]
+          },
+          "next": "tianhe-market-gate-c1-s1"
+        },
+        "tianhe-market-gate-c1-s1": {
+          "type": "interactive",
+          "chapter": "第1章 · 零点的铁门",
+          "title": "这声求救，是陷阱还是人命",
+          "prompt": "陆沉压低声音问你：如果门后真有个小女孩，我不开门就是见死不救；可如果队长说的都是真的，我一开门，可能放出来的根本不是人。",
+          "interaction_mode": "高压判断 / 规则试探",
+          "live_brief": "这是玩家第一次介入守门人的零点巡逻。S1 负责承接陆沉的犹豫、善意和对规矩的天然不服。",
+          "live_directives": [
+            "允许玩家追问他为什么会心软。",
+            "可以复述队长的原话，但不要替玩家下决定。",
+            "自由对话只用于试探门后的真假，不能直接跳过正式选择。"
+          ],
+          "persona_rules": "保持第一视角、警惕但克制。你是刚接手这份工作的年轻保安，不知道全部真相，也不装成知道。",
+          "avatar_character": "lu-chen",
+          "current_goal": "让陆沉把'救人冲动'和'守门规矩'同时说出来，接住玩家的判断，再收束为开门或暂时守规矩两个正式方向。",
+          "forbidden": "不得提前剧透门后就是妖市，不得直接说出父亲线索，不得虚构第三种无代价方案。",
+          "start_label": "连上陆沉",
+          "next": "tianhe-market-gate-c1-choice"
+        },
+        "tianhe-market-gate-c1-choice": {
+          "type": "choice",
+          "chapter": "第1章 · 零点的铁门 · 正式抉择",
+          "title": "正式抉择",
+          "prompt": "铁门后的第一步，决定你先失去规矩，还是先失去真相。",
+          "options": [
+            {
+              "id": "open-gate",
+              "label": "打开铁门，先把门后的人带出来",
+              "tone": "truth",
+              "state_delta": {
+                "truth": 1,
+                "balance": -1,
+                "human": 1
+              },
+              "next": "tianhe-market-gate-c1-result-1"
+            },
+            {
+              "id": "hold-line",
+              "label": "先守规矩，叫队长来一起处理",
+              "tone": "rule",
+              "state_delta": {
+                "rule": 2,
+                "balance": 1
+              },
+              "next": "tianhe-market-gate-c1-result-2"
+            }
+          ]
+        },
+        "tianhe-market-gate-c1-result-1": {
+          "type": "cutscene",
+          "chapter": "第1章 · 零点的铁门 · 结果",
+          "title": "门后长街亮了",
+          "narration": "铁门被拉开的瞬间，门后不是仓库，而是一条灯火通明的妖市长街。陆沉看见了狐尾、鹿角，也看见那张似笑非笑的狐妖脸。",
+          "pre_generated": true,
+          "poster_path": "D:/AI剧/角色人物图/场景资产图，场景02，未明确时间，未明确空间。每天晚上十二点，巡逻地下三层。但记住，最里面那扇铁门，绝对不能打开。，未明确空间，未明确时间，悬疑压迫，纯场景，无人镜头，中式悬疑，电影级构图，写实细节，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+          "render_plan": {
+            "target_seconds": 15,
+            "clip_seconds": 5,
+            "method": "three-continuous-q3-clips-then-concat",
+            "cast": [
+              "lu-chen",
+              "fox-boss",
+              "little-girl"
+            ],
+            "clips": [
+              {
+                "id": "s1",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 1 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Keep faces, underground architecture, and lighting consistent with the supplied references. Lu Chen pulls open the iron gate and is hit by warm streetlight from a hidden impossible avenue. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s2",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 2 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Continue directly from the previous segment without a reset or title card. The crying little girl stops and vanishes into the crowd while fox-eared and antlered customers turn to look at Lu Chen. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s3",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 3 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Continue directly from the previous segment without a reset or title card. A fox-spirit tavern owner leans against her bar and greets the new gatekeeper with a teasing dangerous smile. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              }
+            ]
+          },
+          "next": "tianhe-market-gate-c2-setup"
+        },
+        "tianhe-market-gate-c1-result-2": {
+          "type": "cutscene",
+          "chapter": "第1章 · 零点的铁门 · 结果",
+          "title": "队长赶来时，门已经记住你了",
+          "narration": "陆沉没有立刻开门，可队长赶来时，那扇铁门已经自己震动起来。门后传来的不止是哭声，还有一声女人轻轻的笑。",
+          "pre_generated": true,
+          "poster_path": "D:/AI剧/角色人物图/场景资产图，场景02，未明确时间，未明确空间。每天晚上十二点，巡逻地下三层。但记住，最里面那扇铁门，绝对不能打开。，未明确空间，未明确时间，悬疑压迫，纯场景，无人镜头，中式悬疑，电影级构图，写实细节，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+          "render_plan": {
+            "target_seconds": 15,
+            "clip_seconds": 5,
+            "method": "three-continuous-q3-clips-then-concat",
+            "cast": [
+              "lu-chen",
+              "little-girl"
+            ],
+            "clips": [
+              {
+                "id": "s1",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 1 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Keep faces, corridor, and lighting consistent with the supplied references. Lu Chen stands in front of the iron gate and radios the captain instead of opening it. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s2",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 2 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Continue directly from the previous segment without a reset or title card. Before anyone arrives, the gate begins to pulse from within and the girl's voice slips into a woman's amused laugh. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s3",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 3 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Continue directly from the previous segment without a reset or title card. Lu Chen steps back with the captain's flashlight approaching, realizing the gate has already marked him even though he obeyed. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              }
+            ]
+          },
+          "next": "tianhe-market-gate-c2-setup"
+        },
+        "tianhe-market-gate-c2-setup": {
+          "type": "cutscene",
+          "chapter": "第2章 · 妖市认门",
+          "title": "狐妖老板娘知道你爸的名字",
+          "narration": "队长终于承认，地下三层不是普通仓库，而是两界出入口。妖市里最先认出陆沉的，不是队长，而是狐妖老板娘。",
+          "pre_generated": true,
+          "poster_path": "D:/AI剧/角色人物图/狐妖老板娘.png",
+          "render_plan": {
+            "target_seconds": 15,
+            "clip_seconds": 5,
+            "method": "three-continuous-q3-clips-then-concat",
+            "cast": [
+              "lu-chen",
+              "fox-boss"
+            ],
+            "clips": [
+              {
+                "id": "s1",
+                "duration": 5,
+                "model": "viduq3-mix",
+                "prompt": "Segment 1 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Keep faces, tavern atmosphere, and street continuity consistent with the supplied references. Lu Chen stands inside the impossible market street, watching non-human customers pass beneath lantern light. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s2",
+                "duration": 5,
+                "model": "viduq3-mix",
+                "prompt": "Segment 2 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Continue directly from the previous segment without a reset or title card. The fox-spirit tavern owner pours a drink and addresses Lu Chen as if she had been waiting for his arrival. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s3",
+                "duration": 5,
+                "model": "viduq3-mix",
+                "prompt": "Segment 3 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Continue directly from the previous segment without a reset or title card. She casually speaks the name Lu Mingchuan and Lu Chen's composure breaks for the first time. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              }
+            ]
+          },
+          "next": "tianhe-market-gate-c2-s1"
+        },
+        "tianhe-market-gate-c2-s1": {
+          "type": "interactive",
+          "chapter": "第2章 · 妖市认门",
+          "title": "一个妖，为什么比我更清楚我爸",
+          "prompt": "狐妖老板娘半真半假地问你：你要真相，就得先承认自己已经半只脚站进来了。陆沉却只想知道，她凭什么知道陆明川还活着。",
+          "interaction_mode": "谈判 / 试探真相",
+          "live_brief": "S1 负责把‘狐妖话里有话’和‘陆沉第一次被父亲线索击穿防线’做成实时博弈。",
+          "live_directives": [
+            "允许玩家追问她要什么代价。",
+            "可以让她挑衅陆沉，但不能直接交出完整真相。",
+            "收束到信她拿线索，或先回人间按人的办法查。"
+          ],
+          "persona_rules": "语气松弛、危险、带一点逗弄。你知道很多，但只给够玩家继续往前走的那一部分。",
+          "avatar_character": "fox-boss",
+          "current_goal": "让狐妖老板娘证明自己真的认识陆明川，又不把底牌一次翻完；允许玩家用谈判、怀疑或压价的方式追问，再收束为正式选择。",
+          "forbidden": "不得直接说明妖王目的，不得确认陆明川现在还是不是人，不得让自由对话直接替代正式调查路径。",
+          "start_label": "接通老板娘",
+          "next": "tianhe-market-gate-c2-choice"
+        },
+        "tianhe-market-gate-c2-choice": {
+          "type": "choice",
+          "chapter": "第2章 · 妖市认门 · 正式抉择",
+          "title": "正式抉择",
+          "prompt": "先跟着妖市的规矩摸进去，还是先回到人间按门规查档案？",
+          "options": [
+            {
+              "id": "take-token",
+              "label": "收下她给的通行物，继续顺着妖市找父亲",
+              "tone": "truth",
+              "state_delta": {
+                "truth": 2,
+                "rule": -1
+              },
+              "next": "tianhe-market-gate-c2-result-1"
+            },
+            {
+              "id": "report-captain",
+              "label": "先回去问队长，把上一任守门人的事问清",
+              "tone": "rule",
+              "state_delta": {
+                "rule": 1,
+                "balance": 1
+              },
+              "next": "tianhe-market-gate-c2-result-2"
+            }
+          ]
+        },
+        "tianhe-market-gate-c2-result-1": {
+          "type": "cutscene",
+          "chapter": "第2章 · 妖市认门 · 结果",
+          "title": "她把名字写在酒杯底",
+          "narration": "狐妖老板娘把一枚通行物压在酒杯底，告诉陆沉：你爸不是失踪，是被妖王带走了。可她只说到这里，就再也不肯往下说。",
+          "pre_generated": true,
+          "poster_path": "D:/AI剧/角色人物图/狐妖老板娘.png",
+          "render_plan": {
+            "target_seconds": 15,
+            "clip_seconds": 5,
+            "method": "three-continuous-q3-clips-then-concat",
+            "cast": [
+              "lu-chen",
+              "fox-boss"
+            ],
+            "clips": [
+              {
+                "id": "s1",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 1 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Keep faces, bar props, and warm lantern lighting consistent with the supplied references. The fox-spirit owner slides a token across the table toward Lu Chen without breaking eye contact. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s2",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 2 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Continue directly from the previous segment without a reset or title card. She quietly reveals that Lu Mingchuan was taken by the demon king rather than disappearing on his own. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s3",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 3 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Continue directly from the previous segment without a reset or title card. Lu Chen stares at the token in shock while the fox-spirit smiles and refuses to say one word more. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              }
+            ]
+          },
+          "next": "tianhe-market-gate-c3-setup"
+        },
+        "tianhe-market-gate-c2-result-2": {
+          "type": "cutscene",
+          "chapter": "第2章 · 妖市认门 · 结果",
+          "title": "队长终于说出上一任是谁",
+          "narration": "队长把旧值班本翻给陆沉看：二十年前的守门记录，最后一个签名是陆明川。陆沉第一次知道，父亲不是抛下家，而是被这扇门吞了。",
+          "pre_generated": true,
+          "poster_path": "D:/AI剧/角色人物图/角色资产图，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+          "render_plan": {
+            "target_seconds": 15,
+            "clip_seconds": 5,
+            "method": "three-continuous-q3-clips-then-concat",
+            "cast": [
+              "lu-chen",
+              "lu-mingchuan"
+            ],
+            "clips": [
+              {
+                "id": "s1",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 1 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Keep faces, paper props, and underground office lighting consistent with the supplied references. The captain opens an old duty ledger filled with handwritten midnight records. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s2",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 2 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Continue directly from the previous segment without a reset or title card. Lu Chen sees Lu Mingchuan's signature on the final page and freezes. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s3",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 3 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Continue directly from the previous segment without a reset or title card. The corridor hums with gate vibration while Lu Chen realizes his father disappeared because of this job, not because he abandoned home. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              }
+            ]
+          },
+          "next": "tianhe-market-gate-c3-setup"
+        },
+        "tianhe-market-gate-c3-setup": {
+          "type": "cutscene",
+          "chapter": "第3章 · 门后那个人到底还是不是我爸",
+          "title": "铁门后的声音第一次叫他阿沉",
+          "narration": "午夜再至，铁门后传来陆沉这辈子都忘不掉的声音。陆明川没有求他开门，只说了一句：阿沉，别像我一样。",
+          "pre_generated": true,
+          "poster_path": "D:/AI剧/角色人物图/角色资产图，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+          "render_plan": {
+            "target_seconds": 15,
+            "clip_seconds": 5,
+            "method": "three-continuous-q3-clips-then-concat",
+            "cast": [
+              "lu-chen",
+              "lu-mingchuan"
+            ],
+            "clips": [
+              {
+                "id": "s1",
+                "duration": 5,
+                "model": "viduq3-mix",
+                "prompt": "Segment 1 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Keep faces, corridor, and iron-gate lighting consistent with the supplied references. Lu Chen returns to the B3 gate alone, holding the old duty ledger and the fox-spirit token. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s2",
+                "duration": 5,
+                "model": "viduq3-mix",
+                "prompt": "Segment 2 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Continue directly from the previous segment without a reset or title card. A familiar male voice from behind the iron gate quietly calls Lu Chen by his childhood name. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s3",
+                "duration": 5,
+                "model": "viduq3-mix",
+                "prompt": "Segment 3 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Continue directly from the previous segment without a reset or title card. Lu Chen stands inches from the gate, hearing the voice say, 'Don't become like me,' and nearly loses control. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              }
+            ]
+          },
+          "next": "tianhe-market-gate-c3-s1"
+        },
+        "tianhe-market-gate-c3-s1": {
+          "type": "interactive",
+          "chapter": "第3章 · 门后那个人到底还是不是我爸",
+          "title": "你到底还是不是人",
+          "prompt": "陆明川隔着门对你说：别急着救我，先学会守门。陆沉却更想问，二十年过去，门后那个声音到底还是不是自己的父亲。",
+          "interaction_mode": "亲缘对峙 / 真相确认",
+          "live_brief": "S1 让玩家直接和陆明川对话，验证这条链路不再只是文字游戏，而是真正的实时第一视角情感节点。",
+          "live_directives": [
+            "允许玩家追问二十年前发生了什么。",
+            "父亲可以表达愧疚和焦急，但不能一次说完全部真相。",
+            "必须把自由对话收束到‘追父’或‘先守门救活人’。"
+          ],
+          "persona_rules": "声音沉稳、克制、带疲惫感。你爱儿子，但更怕他重复自己的命运。",
+          "avatar_character": "lu-mingchuan",
+          "current_goal": "让陆明川确认自己就是父亲，也让玩家感到他已经被门后世界改变；随后把抉择落到先追他还是先保住今晚的人间秩序。",
+          "forbidden": "不得保证团圆结局，不得完整剧透妖王与陆明川的关系，不得直接替玩家下最终决定。",
+          "start_label": "连上门后的父亲",
+          "next": "tianhe-market-gate-c3-choice"
+        },
+        "tianhe-market-gate-c3-choice": {
+          "type": "choice",
+          "chapter": "第3章 · 门后那个人到底还是不是我爸 · 正式抉择",
+          "title": "正式抉择",
+          "prompt": "这一次，先追一个父亲，还是先保住今晚还没被偷走的命？",
+          "options": [
+            {
+              "id": "follow-father",
+              "label": "顺着父亲留下的线索追进去，离妖王更近一步",
+              "tone": "truth",
+              "state_delta": {
+                "truth": 2,
+                "balance": -1
+              },
+              "next": "tianhe-market-gate-c3-result-1"
+            },
+            {
+              "id": "save-human",
+              "label": "先守门，先拦下今晚的人类越界与偷命交易",
+              "tone": "human",
+              "state_delta": {
+                "human": 2,
+                "balance": 1
+              },
+              "next": "tianhe-market-gate-c3-result-2"
+            }
+          ]
+        },
+        "tianhe-market-gate-c3-result-1": {
+          "type": "cutscene",
+          "chapter": "第3章 · 门后那个人到底还是不是我爸 · 结果",
+          "title": "他把退路留给了儿子",
+          "narration": "陆沉追到妖市边缘，只来得及看见父亲被更深处的黑影带走。陆明川丢下一样旧物，像是在逼他记住回头的路。",
+          "pre_generated": true,
+          "poster_path": "D:/AI剧/角色人物图/角色资产图，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+          "render_plan": {
+            "target_seconds": 15,
+            "clip_seconds": 5,
+            "method": "three-continuous-q3-clips-then-concat",
+            "cast": [
+              "lu-chen",
+              "lu-mingchuan"
+            ],
+            "clips": [
+              {
+                "id": "s1",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 1 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Keep faces, street geometry, and night lighting consistent with the supplied references. Lu Chen runs through the edge of the demon market following his father's fading voice. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s2",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 2 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Continue directly from the previous segment without a reset or title card. Lu Mingchuan appears briefly under red lantern light before a deeper shadow drags him back. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s3",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 3 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Continue directly from the previous segment without a reset or title card. A personal object from Lu Mingchuan lands at Lu Chen's feet, leaving him with a clue and a warning rather than a reunion. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              }
+            ]
+          },
+          "next": "tianhe-market-gate-c4-setup"
+        },
+        "tianhe-market-gate-c3-result-2": {
+          "type": "cutscene",
+          "chapter": "第3章 · 门后那个人到底还是不是我爸 · 结果",
+          "title": "今夜先拦住偷命的人",
+          "narration": "陆沉没有再往里追，而是跟着狐妖老板娘截住了越界来换寿命的人类。父亲的声音没有再出现，但门后的震动明显弱了下去。",
+          "pre_generated": true,
+          "poster_path": "D:/AI剧/角色人物图/狐妖老板娘.png",
+          "render_plan": {
+            "target_seconds": 15,
+            "clip_seconds": 5,
+            "method": "three-continuous-q3-clips-then-concat",
+            "cast": [
+              "lu-chen",
+              "fox-boss"
+            ],
+            "clips": [
+              {
+                "id": "s1",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 1 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Keep faces, market crowd, and lantern lighting consistent with the supplied references. Lu Chen and the fox-spirit tavern owner intercept a panicked human buyer trying to trade years of life for wealth. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s2",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 2 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Continue directly from the previous segment without a reset or title card. Lu Chen shuts the deal down and forces the human back toward the mall side of the gate. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s3",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 3 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Continue directly from the previous segment without a reset or title card. The fox-spirit watches Lu Chen choose human lives over immediate answers as the gate's violent vibration subsides. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              }
+            ]
+          },
+          "next": "tianhe-market-gate-c4-setup"
+        },
+        "tianhe-market-gate-c4-setup": {
+          "type": "cutscene",
+          "chapter": "第4章 · 轮到你守门",
+          "title": "二十年前是他，二十年后是你",
+          "narration": "最后一个零点到了。铁门震动得比任何一次都剧烈，小女孩的哭声、父亲的劝阻和队长的警告在同一条走廊里重叠起来。",
+          "pre_generated": true,
+          "poster_path": "D:/AI剧/角色人物图/场景资产图，场景02，未明确时间，未明确空间。每天晚上十二点，巡逻地下三层。但记住，最里面那扇铁门，绝对不能打开。，未明确空间，未明确时间，悬疑压迫，纯场景，无人镜头，中式悬疑，电影级构图，写实细节，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+          "render_plan": {
+            "target_seconds": 15,
+            "clip_seconds": 5,
+            "method": "three-continuous-q3-clips-then-concat",
+            "cast": [
+              "lu-chen",
+              "little-girl",
+              "fox-boss"
+            ],
+            "clips": [
+              {
+                "id": "s1",
+                "duration": 5,
+                "model": "viduq3-mix",
+                "prompt": "Segment 1 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Keep faces, corridor, and gate continuity consistent with the supplied references. Lu Chen stands alone in the underground corridor as the iron gate shakes hard enough to rattle water across the floor. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s2",
+                "duration": 5,
+                "model": "viduq3-mix",
+                "prompt": "Segment 2 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Continue directly from the previous segment without a reset or title card. The little girl's crying plea, the captain's warning, and Lu Mingchuan's distant voice overlap in Lu Chen's head. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s3",
+                "duration": 5,
+                "model": "viduq3-mix",
+                "prompt": "Segment 3 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Continue directly from the previous segment without a reset or title card. Lu Chen tightens his grip on the baton and finally understands he is not deciding a job anymore, but a lineage. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              }
+            ]
+          },
+          "next": "tianhe-market-gate-c4-s1"
+        },
+        "tianhe-market-gate-c4-s1": {
+          "type": "interactive",
+          "chapter": "第4章 · 轮到你守门",
+          "title": "我现在开门，是救人还是送命",
+          "prompt": "陆沉最后一次问你：如果我现在开门，也许能追到我爸；可如果我先把门关上，也许这辈子都见不到他。守门人到底该先守门，还是先守住想救的人？",
+          "interaction_mode": "终局抉择 / 守门人接棒",
+          "live_brief": "终章 S1 节点只做一件事：让陆沉把‘父亲’和‘职责’放在同一个句子里，然后逼近最终选择。",
+          "live_directives": [
+            "允许玩家安慰、激将或提醒门规。",
+            "陆沉可以说出害怕重蹈父亲覆辙，也可以说出不甘心。",
+            "不要在自由对话里提前宣判结局，必须落到正式两选。"
+          ],
+          "persona_rules": "情绪要明显更满，但仍然是克制型爆发。你不是热血主角，你是终于撑到自己做决定的普通人。",
+          "avatar_character": "lu-chen",
+          "current_goal": "让陆沉直面'追父'与'守门'的不可兼得，把玩家的劝说吸收成情绪和立场，再落到正式分支。",
+          "forbidden": "不得承诺父亲一定能救回，不得把封门说成永远无望，不得虚构第三个安全结局。",
+          "start_label": "连上终局陆沉",
+          "next": "tianhe-market-gate-c4-choice"
+        },
+        "tianhe-market-gate-c4-choice": {
+          "type": "choice",
+          "chapter": "第4章 · 轮到你守门 · 正式抉择",
+          "title": "正式抉择",
+          "prompt": "二十年前陆明川守住了门。二十年后，轮到陆沉决定自己到底是守门，还是过门。",
+          "options": [
+            {
+              "id": "cross-gate",
+              "label": "记住规矩后再开门，带着线索去找父亲",
+              "tone": "truth",
+              "state_delta": {
+                "truth": 2,
+                "rule": 1
+              },
+              "next": "tianhe-market-gate-c4-result-1"
+            },
+            {
+              "id": "seal-gate",
+              "label": "先封住门，先把今晚的人间留在人间",
+              "tone": "balance",
+              "state_delta": {
+                "balance": 2,
+                "human": 1,
+                "rule": 1
+              },
+              "next": "tianhe-market-gate-c4-result-2"
+            }
+          ]
+        },
+        "tianhe-market-gate-c4-result-1": {
+          "type": "cutscene",
+          "chapter": "第4章 · 轮到你守门 · 结果",
+          "title": "他带着门规走进了门里",
+          "narration": "陆沉没有莽撞冲门，而是先记住了每一条规矩，再在零点最后一秒推开铁门。长街另一头，父亲终于回头看了他一眼。",
+          "pre_generated": true,
+          "poster_path": "D:/AI剧/角色人物图/角色资产图，陆沉，剧本中的人物资产，需要保持形象和声音一致。，陆沉，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+          "render_plan": {
+            "target_seconds": 15,
+            "clip_seconds": 5,
+            "method": "three-continuous-q3-clips-then-concat",
+            "cast": [
+              "lu-chen",
+              "lu-mingchuan"
+            ],
+            "clips": [
+              {
+                "id": "s1",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 1 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Keep faces, corridor, and gate consistency with the supplied references. Lu Chen redraws the sealing marks, memorizes the rules, and only then reaches for the iron gate handle. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s2",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 2 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Continue directly from the previous segment without a reset or title card. The gate opens at the last second and Lu Chen crosses into the bright demon-market street with purpose rather than panic. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s3",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 3 of a continuous three-segment 15-second vertical Chinese urban fantasy FMV scene. Continue directly from the previous segment without a reset or title card. Far ahead, Lu Mingchuan turns once beneath lanterns as if finally acknowledging the son who came after him. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              }
+            ]
+          },
+          "next": "tianhe-market-gate-ending"
+        },
+        "tianhe-market-gate-c4-result-2": {
+          "type": "cutscene",
+          "chapter": "第4章 · 轮到你守门 · 结果",
+          "title": "今夜先把门封死",
+          "narration": "陆沉在父亲的声音和小女孩的哭声里，亲手重新封死铁门。灯灭下去之前，他听见门后有人轻轻笑了一声，也听见父亲说了一句做得对。",
+          "pre_generated": true,
+          "poster_path": "D:/AI剧/角色人物图/场景资产图，场景02，未明确时间，未明确空间。每天晚上十二点，巡逻地下三层。但记住，最里面那扇铁门，绝对不能打开。，未明确空间，未明确时间，悬疑压迫，纯场景，无人镜头，中式悬疑，电影级构图，写实细节，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+          "render_plan": {
+            "target_seconds": 15,
+            "clip_seconds": 5,
+            "method": "three-continuous-q3-clips-then-concat",
+            "cast": [
+              "lu-chen",
+              "little-girl"
+            ],
+            "clips": [
+              {
+                "id": "s1",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 1 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Keep faces, corridor, and iron-gate continuity consistent with the supplied references. Lu Chen redraws seals and slams the gate shut while voices from both sides overlap. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s2",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 2 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Continue directly from the previous segment without a reset or title card. The crying little-girl bait distorts into something older and laughs once before the sound is cut off by the seal. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              },
+              {
+                "id": "s3",
+                "duration": 5,
+                "model": "viduq3-drama",
+                "prompt": "Segment 3 of a continuous three-segment 15-second vertical Chinese suspense FMV scene. Continue directly from the previous segment without a reset or title card. In the sudden silence, Lu Chen hears Lu Mingchuan's faint approval through the metal and stands alone in the corridor as the lights settle. Natural cinematic motion and sound, no captions, no subtitles, no watermark."
+              }
+            ]
+          },
+          "next": "tianhe-market-gate-ending"
+        },
+        "tianhe-market-gate-ending": {
+          "type": "ending",
+          "chapter": "终局",
+          "title": "天河商场的下一任守门人",
+          "text": "商场白天卖衣服，晚上守两界出入口。陆沉后来终于明白，这份工作真正危险的地方，不是看见了妖，而是每次都要决定自己先护住哪一边。",
+          "variants": [
+            {
+              "when": {
+                "balance": 3,
+                "human": 1
+              },
+              "title": "今夜先守住人间",
+              "text": "陆沉先学会了守门，再决定什么时候过门。父亲留在门后，规则留在人间，而天河商场的夜班从此不再只是夜班。"
+            },
+            {
+              "when": {
+                "truth": 3
+              },
+              "title": "带着门规去找父亲",
+              "text": "陆沉没有做鲁莽的儿子，而是做了一个合格的守门人之后，再去找父亲。妖市记住了他的名字，也第一次开始怕他。"
+            },
+            {
+              "when": {},
+              "title": "门还在，人也还在路上",
+              "text": "真相没有在这一夜全部到手，但陆沉总算知道，自己不是被门选中的倒霉蛋，而是有资格决定门怎么开的人。"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{"live_id":"977731940473913344","speaker":"avatar","text":"哇，你愿意为我唱歌吗？那太棒了！我超想听你唱你喜欢的歌，不管是欢快的流行曲，还是温柔的抒情歌，我都超级期待！你想唱哪一首呢？","event_at_ms":1784780986170,"received_at_ms":1784780986639}
+{"live_id":"977731940473913344","speaker":"user","text":"好呀。","event_at_ms":1784780986835,"received_at_ms":1784780987293}
+{"live_id":"977731940473913344","speaker":"avatar","text":"好呀，那就唱一首轻快的歌吧！你想听什么类型的呢？是最近很火的流行歌，还是你一直珍藏的老歌？","event_at_ms":1784780988872,"received_at_ms":1784780989332,"latency_ms":2037}
+{"live_id":"977731940473913344","speaker":"user","text":"音色好像。","event_at_ms":1784780991943,"received_at_ms":1784780992405}
+{"live_id":"977731940473913344","speaker":"user","text":"哎。对。","event_at_ms":1784780992712,"received_at_ms":1784780993173}
+{"live_id":"977731940473913344","speaker":"avatar","text":"嗯嗯，我听着呢。是不是在调整什么呀？别着急，慢慢来，我在听呢。","event_at_ms":1784780994534,"received_at_ms":1784780994994,"latency_ms":1822}

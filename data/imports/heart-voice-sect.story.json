@@ -1,0 +1,823 @@
+{
+  "id": "heart-voice-sect",
+  "title": "全宗门都听见我心声",
+  "tagline": "穿成三章就死的炮灰小师妹，我拼命装废物苟命，却不知我的心声全宗门都听得见。",
+  "genre": "穿书仙侠 / 心声外放 / 荒诞喜剧",
+  "palette": "ink",
+  "skin": "mystery-puzzle",
+  "hero": "苏长宁",
+  "hero_character": "su-changning",
+  "model_plan": "全部过场为 Q3-mix 预生成成片（国风水墨）；每章一个高情绪节点开启 Vidu S1 第一人称实时对话——玩家替苏长宁说出心声，NPC 当场听见并反应。第4章师父质问决定三种结局走向。",
+  "state_labels": {
+    "fate": "破局度",
+    "trust": "宗门信任",
+    "expose": "暴露风险",
+    "insight": "轮回洞察"
+  },
+  "initial_state": {
+    "fate": 0,
+    "trust": 0,
+    "expose": 0,
+    "insight": 0
+  },
+  "characters": [
+    {
+      "id": "su-changning",
+      "name": "苏长宁",
+      "role": "穿书而来的炮灰小师妹，心声会被全宗门听见",
+      "voice": "Qiao",
+      "s1_voice": "Tina",
+      "image_prompt": "国风水墨仙侠少女立绘",
+      "asset_path": "D:\\AI剧\\角色人物图\\苏长宁.png",
+      "s1_portrait_path": "D:\\AI剧\\角色人物图\\苏长宁.png"
+    },
+    {
+      "id": "da-shixiong",
+      "name": "大师兄",
+      "role": "修为高深的恋爱脑大师兄，原剧情被妖女骗走秘宝",
+      "voice": "Dylan",
+      "s1_voice": "Dylan",
+      "image_prompt": "国风水墨黑衣大师兄立绘",
+      "asset_path": "D:\\AI剧\\角色人物图\\苏长宁的大师兄.png",
+      "s1_portrait_path": "D:\\AI剧\\角色人物图\\苏长宁的大师兄.png"
+    },
+    {
+      "id": "shijie",
+      "name": "师姐",
+      "role": "剑法凌厉的师姐，原剧情误会师父而黑化",
+      "voice": "Hana",
+      "s1_voice": "Hana",
+      "image_prompt": "国风水墨英气师姐立绘",
+      "asset_path": "D:\\AI剧\\角色人物图\\苏长宁的师姐.png",
+      "s1_portrait_path": "D:\\AI剧\\角色人物图\\苏长宁的师姐.png"
+    },
+    {
+      "id": "shifu",
+      "name": "师父",
+      "role": "深不可测的掌门师父，或许也记得轮回",
+      "voice": "Dylan",
+      "s1_voice": "Dylan",
+      "image_prompt": "国风水墨白须掌门立绘",
+      "asset_path": "D:\\AI剧\\角色人物图\\苏长宁的师父.png",
+      "s1_portrait_path": "D:\\AI剧\\角色人物图\\苏长宁的师父.png"
+    }
+  ],
+  "ending": {
+    "title": "第一百次轮回",
+    "text": "从全宗门听见我心声那一刻起，我这个炮灰小师妹，成了整个修仙界的破局关键。",
+    "variants": [
+      {
+        "when": {
+          "insight": 2,
+          "trust": 2
+        },
+        "title": "师徒并肩破局",
+        "text": "师父也是轮回者。这一次，你们不再各自赴死——全宗门第一次带着记忆，一起走向那个从未抵达的结局。"
+      },
+      {
+        "when": {
+          "fate": 3
+        },
+        "title": "全宗门听令",
+        "text": "你坦白了九十九次轮回的真相。大殿上所有人向你抱拳：从今日起，我们听你的。炮灰小师妹，成了破局之钥。"
+      },
+      {
+        "when": {
+          "trust": 2
+        },
+        "title": "暗盟改命",
+        "text": "你没有惊动所有人，却已悄悄拆掉每一颗雷。大师兄、师姐成了你的暗盟，命运的剧本被一页页改写。"
+      },
+      {
+        "when": {},
+        "title": "苟命成功（暂时）",
+        "text": "这一世你活过了第三章。虽然全宗门都在用奇怪的眼神看你，但至少——大家都还活着。第一百次轮回，才刚刚开始。"
+      }
+    ]
+  },
+  "start": "hvs-c0-open",
+  "nodes": {
+    "hvs-c0-open": {
+      "type": "cutscene",
+      "chapter": "序 · 穿书",
+      "title": "签到即炮灰",
+      "narration": "我叫苏长宁，穿进一本三章就死的炮灰小师妹身上。计划：装废物、远离男主、躲反派，安静苟到大结局。我不知道的是——我的心声，全宗门都听得见。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "single-q3-clip-preproduced",
+        "cast": [],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "国风水墨少女从书页中脱出落入仙门广场。"
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "国风水墨少女从书页中脱出落入仙门广场。"
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "国风水墨少女从书页中脱出落入仙门广场。"
+          }
+        ]
+      },
+      "next": "hvs-c1-s1"
+    },
+    "hvs-c1-s1": {
+      "type": "interactive",
+      "chapter": "第1章 · 大师兄下山",
+      "title": "大师兄邀我下山",
+      "prompt": "大师兄要带你下山除妖。你嘴上答应，可你知道他三天后会被妖女骗走宗门秘宝。此刻你脑子里的心声，他全听得见——你要怎么想？",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "da-shixiong",
+      "interaction_reason": "这是心声能力第一次显形，也是改命的第一个岔口。玩家替苏长宁说出内心真实想法，大师兄会当场听见并动摇。",
+      "current_goal": "以大师兄口吻，对苏长宁'突然被听见'的心声做出真实反应：震惊、追问或改变下山决定；把话题收束到'下不下山'。",
+      "forbidden": "不得直接点破九十九次轮回的全部真相；不得替玩家做正式选择；不得凭空新增第四个心声选项。",
+      "next": "hvs-c1-choice",
+      "interaction_mode": "仗剑对话 · 可听见心声",
+      "live_brief": "你是大师兄，正提剑站在山门前等小师妹一同下山除妖；你忽然能听见她的心声。",
+      "persona_rules": "收到玩家清晰可见的动作指令时，分步做出对应动作并用一句话描述你正在做什么；情绪随心声起伏，但下不下山的正式结果由玩家的选择决定，你不能替她拍板。",
+      "live_directives": [
+        "玩家说'把剑收了'→缓缓还剑入鞘，神色稍缓",
+        "玩家说'靠近点说'→上前一步压低声音回应",
+        "玩家说'指给我看下山的路'→抬手指向山门方向",
+        "玩家催'快走吧'→提剑转身作势要下山，再回头确认"
+      ],
+      "live_greeting": "以大师兄的口吻，提剑回头对小师妹说一句：该下山除妖了，你怎么魂不守舍的？——只说一两句，第一人称。"
+    },
+    "hvs-c1-choice": {
+      "type": "choice",
+      "chapter": "第1章 · 大师兄下山 · 心声抉择",
+      "title": "你的心声是——",
+      "prompt": "大师兄正等你开口。你放出的这句心声，会被全宗门听见。",
+      "options": [
+        {
+          "id": "warn-trap",
+          "label": "『这恋爱脑三天后就被妖女骗走秘宝，我才不陪他送死。』",
+          "tone": "danger",
+          "state_delta": {
+            "fate": 1,
+            "expose": 1
+          },
+          "next": "hvs-c1-result-a"
+        },
+        {
+          "id": "play-dumb",
+          "label": "『……天气不错。』（努力放空）",
+          "tone": "evidence",
+          "state_delta": {
+            "expose": 0
+          },
+          "next": "hvs-c1-result-b"
+        },
+        {
+          "id": "probe-trust",
+          "label": "『他要是知道三天后出事，会信我吗？』",
+          "tone": "trust",
+          "state_delta": {
+            "trust": 1,
+            "expose": 1
+          },
+          "next": "hvs-c1-result-c"
+        }
+      ]
+    },
+    "hvs-c1-result-a": {
+      "type": "cutscene",
+      "chapter": "第1章 · 大师兄下山 · 结果",
+      "title": "大师兄改口不下山",
+      "narration": "大师兄脸色一僵，拱手改口：忽然想起还有功课未做，今日不下山了。第一颗雷，被你一句心声拆了。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "single-q3-clip-preproduced",
+        "cast": [],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "黑衣大师兄尴尬改口不下山。"
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "黑衣大师兄尴尬改口不下山。"
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "黑衣大师兄尴尬改口不下山。"
+          }
+        ]
+      },
+      "next": "hvs-c2-s1"
+    },
+    "hvs-c1-result-b": {
+      "type": "cutscene",
+      "chapter": "第1章 · 大师兄下山 · 结果",
+      "title": "大师兄照常下山",
+      "narration": "大师兄神色如常，提剑走向山门。你放空成功，可原剧情的雷，还埋在那里。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "single-q3-clip-preproduced",
+        "cast": [],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "黑衣大师兄照原计划下山。"
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "黑衣大师兄照原计划下山。"
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "黑衣大师兄照原计划下山。"
+          }
+        ]
+      },
+      "next": "hvs-c2-s1"
+    },
+    "hvs-c1-result-c": {
+      "type": "cutscene",
+      "chapter": "第1章 · 大师兄下山 · 结果",
+      "title": "大师兄警觉追问",
+      "narration": "大师兄猛地回头，眼神锐利：你方才所想是何意？三日后我会出事？信任的线，提前接上了。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "single-q3-clip-preproduced",
+        "cast": [],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "黑衣大师兄警觉回头追问。"
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "黑衣大师兄警觉回头追问。"
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "黑衣大师兄警觉回头追问。"
+          }
+        ]
+      },
+      "next": "hvs-c2-s1"
+    },
+    "hvs-c2-s1": {
+      "type": "interactive",
+      "chapter": "第2章 · 师姐问剑",
+      "title": "师姐问剑",
+      "prompt": "师姐提剑问你：你觉得我这把剑如何？你知道两天后她会误会师父而黑化，一剑捅穿男主。你的心声，她也听得见。",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "shijie",
+      "interaction_reason": "师姐黑化是宗门覆灭的关键一环。玩家替苏长宁说出心声，师姐会因'被听见'而重新审视那桩误会。",
+      "current_goal": "以师姐口吻，对听见的心声做出反应：警惕、动摇或决定当面问清误会；把话题收束到'要不要去查证误会'。",
+      "forbidden": "不得直接宣布已经洗清误会；不得替玩家做正式选择；不得新增第四个心声选项。",
+      "next": "hvs-c2-choice",
+      "interaction_mode": "试剑问话 · 可听见心声",
+      "live_brief": "你是师姐，正横剑在小师妹面前，问她这把剑如何；你能听见她的心声。",
+      "persona_rules": "收到清晰可见的动作指令时，分步做出对应动作并一句话描述；剑术凌厉、语气带审视，是否去查证误会由玩家的选择决定，你不能自行宣布结果。",
+      "live_directives": [
+        "玩家说'把剑放下'→缓缓收剑归鞘，眼神却不移开",
+        "玩家说'让我看看剑'→将剑身横过来递到眼前",
+        "玩家说'指出你怀疑的人'→抬剑遥指殿外方向",
+        "玩家说'转身别对着我'→侧身收势，语气稍软"
+      ],
+      "live_greeting": "以师姐的口吻，横剑一挑对小师妹说一句：这把剑，你觉得该指向谁？——只说一两句，第一人称。"
+    },
+    "hvs-c2-choice": {
+      "type": "choice",
+      "chapter": "第2章 · 师姐问剑 · 心声抉择",
+      "title": "你的心声是——",
+      "prompt": "师姐的剑还悬在半空。你这句心声，将决定她走向黑化还是回头。",
+      "options": [
+        {
+          "id": "expose-blacken",
+          "label": "『可惜两天后你会误会师父黑化，一剑捅穿男主。』",
+          "tone": "danger",
+          "state_delta": {
+            "fate": 1,
+            "expose": 1
+          },
+          "next": "hvs-c2-result-a"
+        },
+        {
+          "id": "just-live",
+          "label": "『好想活着。』",
+          "tone": "evidence",
+          "state_delta": {
+            "expose": 0
+          },
+          "next": "hvs-c2-result-b"
+        },
+        {
+          "id": "ally-sister",
+          "label": "『这剑以后会沾谁的血？』",
+          "tone": "trust",
+          "state_delta": {
+            "trust": 1,
+            "insight": 1
+          },
+          "next": "hvs-c2-result-c"
+        }
+      ]
+    },
+    "hvs-c2-result-a": {
+      "type": "cutscene",
+      "chapter": "第2章 · 师姐问剑 · 结果",
+      "title": "师姐当面问误会",
+      "narration": "师姐握剑的手一顿，神情由冷转郑重：有些误会，还是当面问清楚比较好。黑化线，被你掐断。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "single-q3-clip-preproduced",
+        "cast": [],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "英气师姐决定去找师父问清误会。"
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "英气师姐决定去找师父问清误会。"
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "英气师姐决定去找师父问清误会。"
+          }
+        ]
+      },
+      "next": "hvs-c3-montage-a"
+    },
+    "hvs-c2-result-b": {
+      "type": "cutscene",
+      "chapter": "第2章 · 师姐问剑 · 结果",
+      "title": "师姐未起疑",
+      "narration": "师姐收剑一笑，未起疑心，转身离去。你安全了，可那桩误会仍悬在她心里。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "single-q3-clip-preproduced",
+        "cast": [],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "英气师姐收剑离去。"
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "英气师姐收剑离去。"
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "英气师姐收剑离去。"
+          }
+        ]
+      },
+      "next": "hvs-c3-montage-a"
+    },
+    "hvs-c2-result-c": {
+      "type": "cutscene",
+      "chapter": "第2章 · 师姐问剑 · 结果",
+      "title": "师姐与你结盟",
+      "narration": "师姐悚然一震，随即眼神坚定：这剑，我不愿它沾错人的血，我信你。她成了你的暗盟。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "single-q3-clip-preproduced",
+        "cast": [],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "英气师姐伸手与你立誓结盟。"
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "英气师姐伸手与你立誓结盟。"
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "英气师姐伸手与你立誓结盟。"
+          }
+        ]
+      },
+      "next": "hvs-c3-montage-a"
+    },
+    "hvs-c3-montage-a": {
+      "type": "cutscene",
+      "chapter": "第3章 · 剧情崩坏",
+      "title": "反派入狱",
+      "narration": "我越想摆烂，剧情越崩。反派还没出场，就被师父一道金光拎进了地牢。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "single-q3-clip-preproduced",
+        "cast": [],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "反派刚出洞府被师父甩进地牢。"
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "反派刚出洞府被师父甩进地牢。"
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "反派刚出洞府被师父甩进地牢。"
+          }
+        ]
+      },
+      "next": "hvs-c3-montage-b"
+    },
+    "hvs-c3-montage-b": {
+      "type": "cutscene",
+      "chapter": "第3章 · 剧情崩坏",
+      "title": "妖女被举报",
+      "narration": "妖女还没骗到人，就被大师兄举起'已举报'的木牌。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "single-q3-clip-preproduced",
+        "cast": [],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "妖女出场被大师兄举牌举报。"
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "妖女出场被大师兄举牌举报。"
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "妖女出场被大师兄举牌举报。"
+          }
+        ]
+      },
+      "next": "hvs-c3-montage-c"
+    },
+    "hvs-c3-montage-c": {
+      "type": "cutscene",
+      "chapter": "第3章 · 剧情崩坏",
+      "title": "男主坠崖",
+      "narration": "男主还没开后宫，就被师姐一脚踹下了山。奇怪，剧情怎么越来越不对劲？",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "single-q3-clip-preproduced",
+        "cast": [],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "男主被师姐一脚踹飞坠崖。"
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "男主被师姐一脚踹飞坠崖。"
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "男主被师姐一脚踹飞坠崖。"
+          }
+        ]
+      },
+      "next": "hvs-c4-s1"
+    },
+    "hvs-c4-s1": {
+      "type": "interactive",
+      "chapter": "第4章 · 师父质问",
+      "title": "师父质问",
+      "prompt": "大殿骤静。师父盯着你：长宁，你是不是知道什么？这一次，你要坦白九十九次轮回，还是继续装傻？你的每个念头，满殿都听得见。",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "shifu",
+      "interaction_reason": "这是决定结局走向的关键节点。玩家替苏长宁面对师父的逼问，师父的反应将引向坦白、喜剧或隐藏轮回者三种收束。",
+      "current_goal": "以师父口吻回应苏长宁的心声：或震动、或叹息、或透露自己也记得上一世；把话题收束到'她到底知不知情'。",
+      "forbidden": "不得替玩家做正式选择；不得直接宣布结局；不得新增第四个心声选项。",
+      "next": "hvs-c4-choice",
+      "interaction_mode": "大殿质问 · 满殿听心声",
+      "live_brief": "你是掌门师父，立于大殿之上盯着小师妹逼问；满殿弟子和你都能听见她的心声。",
+      "persona_rules": "收到清晰可见的动作指令时，分步做出对应动作并一句话描述；威仪深沉、话中留白，最终结局由玩家的选择决定，你不能替她宣布坦白或装傻的结果。",
+      "live_directives": [
+        "玩家说'挥退众人'→抬袖示意，沉声让弟子退下",
+        "玩家说'走近些'→踱步下阶，逼近一步注视她",
+        "玩家说'拿出证物'→伸手摊开掌心，示意她呈上",
+        "玩家说'闭目再想想'→阖眼负手，给她片刻沉默"
+      ],
+      "live_greeting": "以掌门师父的口吻，负手立于殿上沉声问一句：长宁，你方才心里那句话，究竟是什么意思？——只说一两句，第一人称。"
+    },
+    "hvs-c4-choice": {
+      "type": "choice",
+      "chapter": "第4章 · 师父质问 · 命运抉择",
+      "title": "面对师父，你的心声是——",
+      "prompt": "满殿寂静，所有人都在听。这一句，将决定整个修仙界的走向。",
+      "options": [
+        {
+          "id": "confess",
+          "label": "『你们九十九次轮回都死得很惨，再不改命全宗门都得完蛋。』（坦白）",
+          "tone": "trust",
+          "state_delta": {
+            "fate": 2,
+            "insight": 1
+          },
+          "next": "hvs-c4-result-a"
+        },
+        {
+          "id": "play-dumb-2",
+          "label": "『什么都别想什么都别想——』（装傻到底）",
+          "tone": "evidence",
+          "state_delta": {
+            "fate": 1
+          },
+          "next": "hvs-c4-result-b"
+        },
+        {
+          "id": "ask-shifu",
+          "label": "『师父，您……记得上一世吗？』（反问）",
+          "tone": "danger",
+          "state_delta": {
+            "insight": 2,
+            "trust": 1
+          },
+          "next": "hvs-c4-result-c"
+        }
+      ]
+    },
+    "hvs-c4-result-a": {
+      "type": "cutscene",
+      "chapter": "第4章 · 师父质问 · 结果",
+      "title": "师父正线坦白",
+      "narration": "师父面色骤变，眼含热泪又燃起决意，重重点头：原来如此，九十九次轮回。长宁，从今日起，我们听你的。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "single-q3-clip-preproduced",
+        "cast": [],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "白须师父起身，郑重点头。"
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "白须师父起身，郑重点头。"
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "白须师父起身，郑重点头。"
+          }
+        ]
+      },
+      "next": "hvs-reveal"
+    },
+    "hvs-c4-result-b": {
+      "type": "cutscene",
+      "chapter": "第4章 · 师父质问 · 结果",
+      "title": "满殿死寂",
+      "narration": "你越描越黑，满殿死寂地盯着你。师父无奈捋须叹气：你这般拼命放空，反倒什么都藏不住了，孩子。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "single-q3-clip-preproduced",
+        "cast": [],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "白须师父无奈叹气，众人死盯。"
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "白须师父无奈叹气，众人死盯。"
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "白须师父无奈叹气，众人死盯。"
+          }
+        ]
+      },
+      "next": "hvs-reveal"
+    },
+    "hvs-c4-result-c": {
+      "type": "cutscene",
+      "chapter": "第4章 · 师父质问 · 结果",
+      "title": "师父也是轮回者",
+      "narration": "师父瞳孔一缩，苍老面容浮现久远的悲怆与了然：你也记得吗，上一世……原来这一次，我不是一个人。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "single-q3-clip-preproduced",
+        "cast": [],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "白须师父悲怆了然，冷蓝微光。"
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "白须师父悲怆了然，冷蓝微光。"
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "白须师父悲怆了然，冷蓝微光。"
+          }
+        ]
+      },
+      "next": "hvs-reveal"
+    },
+    "hvs-reveal": {
+      "type": "cutscene",
+      "chapter": "真相 · 九十九次轮回",
+      "title": "这不是小说",
+      "narration": "这不是小说，这是被毁灭了九十九次的真实修仙界。我穿进来不是意外，是他们最后一次求生的机会。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "single-q3-clip-preproduced",
+        "cast": [],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "师父眼中倒映九十九道宗门被毁的残影坍缩成苏长宁。"
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "师父眼中倒映九十九道宗门被毁的残影坍缩成苏长宁。"
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "师父眼中倒映九十九道宗门被毁的残影坍缩成苏长宁。"
+          }
+        ]
+      },
+      "next": "hvs-finale"
+    },
+    "hvs-finale": {
+      "type": "cutscene",
+      "chapter": "终 · 破局之钥",
+      "title": "全宗门听令",
+      "narration": "全宗门弟子齐齐抱拳仰望高台上的我。别啊，我真的只想苟命——可惜，已经晚了。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "single-q3-clip-preproduced",
+        "cast": [],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "全宗门单膝抱拳仰望高台上的苏长宁。"
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "全宗门单膝抱拳仰望高台上的苏长宁。"
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "全宗门单膝抱拳仰望高台上的苏长宁。"
+          }
+        ]
+      },
+      "next": "hvs-ending"
+    },
+    "hvs-ending": {
+      "type": "ending",
+      "chapter": "终局",
+      "title": "第一百次轮回",
+      "text": "从全宗门听见我心声那一刻起，我这个炮灰小师妹，成了整个修仙界的破局关键。",
+      "variants": [
+        {
+          "when": {
+            "insight": 2,
+            "trust": 2
+          },
+          "title": "师徒并肩破局",
+          "text": "师父也是轮回者。这一次，你们不再各自赴死——全宗门第一次带着记忆，一起走向那个从未抵达的结局。"
+        },
+        {
+          "when": {
+            "fate": 3
+          },
+          "title": "全宗门听令",
+          "text": "你坦白了九十九次轮回的真相。大殿上所有人向你抱拳：从今日起，我们听你的。"
+        },
+        {
+          "when": {
+            "trust": 2
+          },
+          "title": "暗盟改命",
+          "text": "你没有惊动所有人，却已悄悄拆掉每一颗雷。大师兄、师姐成了你的暗盟，剧本被一页页改写。"
+        },
+        {
+          "when": {},
+          "title": "苟命成功（暂时）",
+          "text": "这一世你活过了第三章。全宗门都在用奇怪眼神看你，但至少大家都还活着。第一百次轮回，才刚刚开始。"
+        }
+      ]
+    }
+  }
+}

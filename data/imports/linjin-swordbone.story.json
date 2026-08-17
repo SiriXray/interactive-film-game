@@ -1,0 +1,823 @@
+{
+  "id": "linjin-swordbone",
+  "title": "天命剑骨",
+  "tagline": "全宗都把他当废物，只有明天的梦一次都没有错过。",
+  "genre": "中式悬疑仙侠 / 预知梦 / 宗门背叛",
+  "palette": "swordbone",
+  "skin": "ancient-suspense",
+  "hero": "林烬",
+  "hero_character": "lin-jin",
+  "model_plan": "关键剧情用 Q3 Mix / Q3 Drama 预生成 15 秒成片；预言、禁闭、觉醒、背叛与终局选择使用 S1 第一人称实时互动承接情绪与策略。",
+  "state_labels": {
+    "trust": "宗门信任",
+    "fate": "天命觉醒",
+    "risk": "魔气风险",
+    "truth": "真相线索",
+    "bond": "师徒羁绊"
+  },
+  "initial_state": {
+    "trust": 0,
+    "fate": 0,
+    "risk": 0,
+    "truth": 0,
+    "bond": 0
+  },
+  "characters": [
+    {
+      "id": "lin-jin",
+      "name": "林烬",
+      "role": "青云宗外门弟子，天命剑骨被封印者",
+      "voice": "Dylan",
+      "image_prompt": "Vertical 9:16 cinematic Chinese xianxia suspense character key art, Lin Jin, a young East Asian male outer disciple in worn blue-gray robes, carrying an old wooden sword, restrained but stubborn eyes, faint cyan sword-bone light under the skin, misty Qingyun sect training ground, realistic film lighting, single subject, no text, no watermark."
+    },
+    {
+      "id": "xuanqing",
+      "name": "玄清长老",
+      "role": "林烬师父，封印天命剑骨的人",
+      "voice": "Joseph Chen",
+      "image_prompt": "Vertical 9:16 cinematic Chinese xianxia elder character key art, Xuanqing Elder, old East Asian male master in dark Taoist robes, long white beard, complex protective eyes, holding a cracked talisman seal, cold stone cliff background, suspenseful realistic lighting, single subject, no text, no watermark."
+    },
+    {
+      "id": "dashixiong",
+      "name": "大师兄",
+      "role": "青云宗大师兄，暗中献出宗门至宝",
+      "voice": "Lenn",
+      "image_prompt": "Vertical 9:16 cinematic Chinese xianxia antagonist key art, senior disciple in black martial robes, handsome cold East Asian male, carrying a corrupted sect treasure, faint demonic smoke around one hand, ritual altar in the background, realistic film lighting, single subject, no text, no watermark."
+    },
+    {
+      "id": "shijie",
+      "name": "师姐",
+      "role": "青云宗师姐，被梦境预示会入魔",
+      "voice": "Sohee",
+      "image_prompt": "Vertical 9:16 cinematic Chinese xianxia female disciple key art, senior sister in pale blue sect robes, calm but doubtful East Asian woman, sword at waist, a hint of dark red demonic reflection in her eyes, misty temple hall, realistic suspense lighting, single subject, no text, no watermark."
+    },
+    {
+      "id": "zhangmen",
+      "name": "掌门",
+      "role": "青云宗掌门，威严却误判预言",
+      "voice": "Andre",
+      "image_prompt": "Vertical 9:16 cinematic Chinese xianxia sect leader key art, stern East Asian male leader in formal dark robes, jade crown, commanding posture inside Qingyun great hall, heavy shadows and incense smoke, realistic film lighting, single subject, no text, no watermark."
+    },
+    {
+      "id": "dizijia",
+      "name": "弟子甲",
+      "role": "嘲笑林烬的外门弟子",
+      "voice": "Eric",
+      "image_prompt": "Vertical 9:16 cinematic Chinese xianxia minor disciple key art, young East Asian male outer disciple with mocking expression, worn training robe, practice sword, wet stone courtyard, realistic film lighting, single subject, no text, no watermark."
+    }
+  ],
+  "source_assets": {
+    "lin-jin": "D:/AI剧/角色人物图/角色资产图，林烬，剧本中的功能性角色。，林烬，剧本中的功能性角色 ，中式悬疑惊悚，电影感打光，真实人物设定，细节丰富，高张力情绪，单一主体，清晰构图，可作为解说剧一致性参考图，避免文字水印和多余标识.png",
+    "xuanqing": "D:/AI剧/角色人物图/资产图，玄清长老，剧本中的功能性角色。，玄清长老，剧本中的功能性角色 ，中式悬疑惊悚，电影感打光，真实人物设定，细节丰富，高张力情绪，单一主体，清晰构图，可作为解说剧一致性参考图，避免文字水印和多余标识.png",
+    "dashixiong": "D:/AI剧/角色人物图/角色资产图，大师兄，剧本中的功能性角色。，大师兄，剧本中的功能性角色 ，中式悬疑惊悚，电影感打光，真实人物设定，细节丰富，高张力情绪，单一主体，清晰构图，可作为解说剧一致性参考图，避免文字水印和多余标识.png",
+    "shijie": "D:/AI剧/角色人物图/角色资产图，师姐，剧本中的功能性角色。，师姐，剧本中的功能性角色 ，中式悬疑惊悚，电影感打光，真实人物设定，细节丰富，高张力情绪，单一主体，清晰构图，可作为解说剧一致性参考图，避免文字水印和多余标识.png",
+    "zhangmen": "D:/AI剧/角色人物图/角色资产图，掌门，剧本中的功能性角色。，掌门，剧本中的功能性角色 ，中式悬疑惊悚，电影感打光，真实人物设定，细节丰富，高张力情绪，单一主体，清晰构图，可作为解说剧一致性参考图，避免文字水印和多余标识.png",
+    "dizijia": "D:/AI剧/角色人物图/角色资产图，弟子甲，剧本中的功能性角色。，弟子甲，剧本中的功能性角色 ，中式悬疑惊悚，电影感打光，真实人物设定，细节丰富，高张力情绪，单一主体，清晰构图，可作为解说剧一致性参考图，避免文字水印和多余标识.png"
+  },
+  "provider_templates": {
+    "seedance_reference_video": {
+      "endpoint": "http://118.145.133.148:3001/v1/videos",
+      "method": "POST",
+      "auth_env": "SEEDANCE_API_KEY",
+      "model": "doubao-seedance-2-0-mini-260615",
+      "ratio": "16:9",
+      "duration": 11,
+      "generate_audio": true,
+      "watermark": true,
+      "note": "兼容用户提供的 Seedance 请求体风格；当前 interactive-film-game 默认生产队列仍走 Vidu Q3 / S1，提交前需要单独适配 provider client。"
+    }
+  },
+  "ending": {
+    "title": "今天，改掉明天",
+    "text": "所有人都以为林烬只是预言灾难的人。真正的选择，是他要不要把自己也算进可以被救的命里。",
+    "variants": [
+      {
+        "when": {
+          "truth": 2,
+          "trust": 1
+        },
+        "title": "青云新钟",
+        "text": "三声钟不再只报灾厄。林烬把预知梦写成宗门戒律，让青云宗学会在灾难前醒来。"
+      },
+      {
+        "when": {
+          "fate": 3,
+          "risk": 1
+        },
+        "title": "天命剑主",
+        "text": "剑骨完全觉醒，魔气被斩回裂缝。林烬却明白，天命不是被选中，而是敢为选择付代价。"
+      },
+      {
+        "when": {},
+        "title": "思过崖的灯",
+        "text": "宗门没有立刻相信他，但思过崖的石门再也没有被锁死。后来每个说出异梦的人，都有人愿意先听完。"
+      }
+    ]
+  },
+  "start": "linjin-swordbone-c1-setup",
+  "nodes": {
+    "linjin-swordbone-c1-setup": {
+      "type": "cutscene",
+      "chapter": "第1章 · 废物的明日梦",
+      "title": "剑都嫌你笨",
+      "narration": "林烬入门三年仍不会御剑，连杂役弟子都敢笑他。夜里，他又一次梦见了明天，只是这次梦见的是青云宗灭门。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": ["lin-jin", "dizijia"],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Lin Jin's worn robe, wooden sword, mist, and Qingyun sect training ground consistent with the supplied character references. In a damp ancient practice yard, Lin Jin fails to lift a wooden sword while outer disciples watch. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment without a reset or title card. Disciple Jia steps close and mocks Lin Jin, pointing at the sword while Lin Jin lowers his eyes and tightens his grip. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment without a reset or title card. Night cuts in; Lin Jin wakes from a nightmare of Qingyun mountain burning, blood on stone stairs, and a cracked sect bell. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "linjin-swordbone-c1-s1"
+    },
+    "linjin-swordbone-c1-s1": {
+      "type": "interactive",
+      "chapter": "第1章 · 废物的明日梦",
+      "title": "梦见灭门的人，要不要被相信",
+      "prompt": "林烬看着你，声音发紧：如果我说青云宗明天会灭门，你会先笑我，还是先听我说完？",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "lin-jin",
+      "interaction_reason": "主角第一次把预知梦说出口，玩家需要在被嘲笑的创伤和灾难预警之间建立信任。",
+      "current_goal": "承认自己害怕被当成疯子，但必须把梦告诉师父；允许玩家追问细节，最后收束到立刻闯大殿或先找证据。",
+      "forbidden": "不得提前证明梦一定成真，不得说出大师兄背叛的完整证据，不得跳过正式选择。",
+      "next": "linjin-swordbone-c1-choice"
+    },
+    "linjin-swordbone-c1-choice": {
+      "type": "choice",
+      "chapter": "第1章 · 废物的明日梦 · 正式抉择",
+      "title": "正式抉择",
+      "prompt": "梦醒后只剩一个清晨。林烬要用哪种方式开口？",
+      "options": [
+        {
+          "id": "rush-hall",
+          "label": "立刻闯入大殿，把灭门梦全说出来",
+          "tone": "truth",
+          "state_delta": { "truth": 1, "risk": 1 },
+          "next": "linjin-swordbone-c1-result-1"
+        },
+        {
+          "id": "find-proof",
+          "label": "先去后山查封印，带着证据再说",
+          "tone": "cautious",
+          "state_delta": { "truth": 1, "trust": -1 },
+          "next": "linjin-swordbone-c1-result-2"
+        }
+      ]
+    },
+    "linjin-swordbone-c1-result-1": {
+      "type": "cutscene",
+      "chapter": "第1章 · 废物的明日梦 · 结果",
+      "title": "大殿里的笑声",
+      "narration": "林烬冲进大殿，说出梦里的一切。笑声像冷雨落下，大师兄第一个站出来指责他妖言惑众。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": ["lin-jin", "dashixiong", "zhangmen"],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Qingyun great hall, sect robes, and character faces consistent. Lin Jin bursts into the great hall and kneels before the sect leader, breathless and desperate. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Disciples laugh in disbelief while Dashixiong steps forward with a cold smile, accusing Lin Jin in front of everyone. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. The sect leader raises his hand and orders Lin Jin confined to Repentance Cliff as the hall falls silent. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "linjin-swordbone-c2-setup"
+    },
+    "linjin-swordbone-c1-result-2": {
+      "type": "cutscene",
+      "chapter": "第1章 · 废物的明日梦 · 结果",
+      "title": "后山裂纹",
+      "narration": "林烬先去了后山封印。他摸到一道新裂纹，魔气从石缝里渗出，却也因此错过了最容易被相信的时刻。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": ["lin-jin"],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Lin Jin climbs alone toward the back mountain seal before dawn, carrying a weak lantern and wooden sword. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Close on his fingers touching a fresh crack in the ancient seal stone as black demonic mist leaks out. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. He runs back toward Qingyun great hall while the morning bell begins to ring in the distance. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "linjin-swordbone-c2-setup"
+    },
+    "linjin-swordbone-c2-setup": {
+      "type": "cutscene",
+      "chapter": "第2章 · 妖言惑众",
+      "title": "禁闭三日",
+      "narration": "掌门下令把林烬关进思过崖。师姐怀疑他练功走火，大师兄却在所有人看不见的地方露出一瞬冷意。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": ["lin-jin", "shijie", "dashixiong", "zhangmen"],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. In the great hall, the sect leader's order falls heavily; Lin Jin is pulled away by disciples. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Senior Sister watches Lin Jin with doubt and pity while he tries to explain one last time. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Dashixiong turns away in shadow, briefly revealing a cold demonic reflection in his eyes. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "linjin-swordbone-c2-s1"
+    },
+    "linjin-swordbone-c2-s1": {
+      "type": "interactive",
+      "chapter": "第2章 · 妖言惑众",
+      "title": "被相信之前，先被关起来",
+      "prompt": "师姐拦在石阶前：林烬，你是不是练功练疯了？你可以让她再听一次，也可以问她愿不愿意去看后山封印。",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "shijie",
+      "interaction_reason": "师姐是宗门内部第一个可能动摇的人，玩家的实时说服会影响后续信任与真相路线。",
+      "current_goal": "保持怀疑但不残忍；允许玩家提出证据或情绪请求；最后收束为帮林烬传话或按掌门命令押送。",
+      "forbidden": "不得直接相信全部预言，不得揭露大师兄背叛，不得提前入魔。",
+      "next": "linjin-swordbone-c2-choice"
+    },
+    "linjin-swordbone-c2-choice": {
+      "type": "choice",
+      "chapter": "第2章 · 妖言惑众 · 正式抉择",
+      "title": "正式抉择",
+      "prompt": "师姐只愿意帮一次，也可能一次都不帮。",
+      "options": [
+        {
+          "id": "ask-shijie-check-seal",
+          "label": "请师姐去后山看封印裂纹",
+          "tone": "truth",
+          "state_delta": { "trust": 1, "truth": 1 },
+          "next": "linjin-swordbone-c2-result-1"
+        },
+        {
+          "id": "accept-confinement",
+          "label": "接受禁闭，保留体力等梦境应验",
+          "tone": "endure",
+          "state_delta": { "bond": 1, "risk": 1 },
+          "next": "linjin-swordbone-c2-result-2"
+        }
+      ]
+    },
+    "linjin-swordbone-c2-result-1": {
+      "type": "cutscene",
+      "chapter": "第2章 · 妖言惑众 · 结果",
+      "title": "她看见了裂缝",
+      "narration": "师姐赶到后山，看见封印裂纹。她没能阻止禁闭，却第一次开始怀疑大师兄为什么提前守在那里。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": ["shijie", "dashixiong"],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Senior Sister hurries through misty mountain paths toward the back mountain seal. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. She sees the cracked seal and black mist leaking from the stone, her doubtful face turning pale. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Dashixiong appears near the seal too early, smiling politely while his hand hides a dark talisman. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "linjin-swordbone-c3-setup"
+    },
+    "linjin-swordbone-c2-result-2": {
+      "type": "cutscene",
+      "chapter": "第2章 · 妖言惑众 · 结果",
+      "title": "思过崖的锁",
+      "narration": "林烬被锁进思过崖。山风像刀，他把梦里每一声钟响都刻在石壁上，等着命运自己作证。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": ["lin-jin"],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Lin Jin is locked behind a heavy stone door at Repentance Cliff as cold wind sweeps through chains. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. He carves three bell marks into the stone wall with a broken shard, hands trembling but steady. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Far below the cliff, the first sect bell rings and Lin Jin looks up in horror. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "linjin-swordbone-c3-setup"
+    },
+    "linjin-swordbone-c3-setup": {
+      "type": "cutscene",
+      "chapter": "第3章 · 三声钟响",
+      "title": "封印真的裂开了",
+      "narration": "午时，后山封印裂开。第一声钟响，魔气入侵；第二声钟响，内门失守；第三声钟响，有人背叛宗门。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": ["lin-jin", "xuanqing"],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. At noon, the back mountain seal splits open and black demonic mist pours into Qingyun sect. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Three great bell sounds roll across the mountain while disciples flee through smoke and broken gates. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Xuanqing Elder opens the stone door of Repentance Cliff and faces Lin Jin in the cold light. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "linjin-swordbone-c3-s1"
+    },
+    "linjin-swordbone-c3-s1": {
+      "type": "interactive",
+      "chapter": "第3章 · 三声钟响",
+      "title": "你的灵根不是残缺，是被我封住了",
+      "prompt": "玄清长老看着你：林烬，你梦见的都是真的。你可以问他为什么封住你，也可以催他立刻解开封印。",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "xuanqing",
+      "interaction_reason": "师徒真相揭露与灾难同时发生，适合 S1 承接愧疚、保护和觉醒前的临场判断。",
+      "current_goal": "承认多年封印是保护也是亏欠；解释天命剑骨会引来魔族；将讨论收束为立刻觉醒或先潜入祭坛。",
+      "forbidden": "不得保证觉醒后无代价，不得提前说明大师兄会如何失败，不得复活已战死的人。",
+      "next": "linjin-swordbone-c3-choice"
+    },
+    "linjin-swordbone-c3-choice": {
+      "type": "choice",
+      "chapter": "第3章 · 三声钟响 · 正式抉择",
+      "title": "正式抉择",
+      "prompt": "封印一旦解开，魔族会第一个看见林烬。",
+      "options": [
+        {
+          "id": "awaken-now",
+          "label": "立刻解封天命剑骨，正面下山",
+          "tone": "fate",
+          "state_delta": { "fate": 2, "risk": 1, "bond": 1 },
+          "next": "linjin-swordbone-c3-result-1"
+        },
+        {
+          "id": "sneak-altar",
+          "label": "暂缓觉醒，先潜到祭坛确认背叛",
+          "tone": "truth",
+          "state_delta": { "truth": 2, "risk": -1 },
+          "next": "linjin-swordbone-c3-result-2"
+        }
+      ]
+    },
+    "linjin-swordbone-c3-result-1": {
+      "type": "cutscene",
+      "chapter": "第3章 · 三声钟响 · 结果",
+      "title": "青色剑光",
+      "narration": "玄清长老解开第一道封印，青色剑光冲出思过崖。魔气像潮水一样转向林烬。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": ["lin-jin", "xuanqing"],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Xuanqing Elder presses a talisman to Lin Jin's chest and cracks the first seal. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Cyan sword light bursts from Lin Jin's body and illuminates the cliff walls. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Black demonic mist changes direction and rushes toward Repentance Cliff as Lin Jin grips his wooden sword. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "linjin-swordbone-c4-setup"
+    },
+    "linjin-swordbone-c3-result-2": {
+      "type": "cutscene",
+      "chapter": "第3章 · 三声钟响 · 结果",
+      "title": "祭坛前的人影",
+      "narration": "林烬没有立刻解封，而是潜到祭坛。他看见大师兄捧着宗门至宝，正把最后一道禁制献给魔尊。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": ["lin-jin", "dashixiong"],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Lin Jin moves through smoke-filled corridors toward the forbidden altar, staying low behind stone pillars. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Dashixiong stands before the ritual altar holding the sect treasure, demonic light crawling over his hands. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Lin Jin silently confirms the betrayal as the altar cracks and a huge shadow rises behind Dashixiong. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "linjin-swordbone-c4-setup"
+    },
+    "linjin-swordbone-c4-setup": {
+      "type": "cutscene",
+      "chapter": "第4章 · 祭坛背叛",
+      "title": "就凭你也想阻止我",
+      "narration": "林烬冲下思过崖，大师兄已站在祭坛前。宗门至宝在他手中发黑，师姐被魔气拖向失控边缘。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": ["lin-jin", "dashixiong", "shijie"],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Lin Jin rushes into a ruined ritual courtyard, smoke and broken banners whipping around him. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Dashixiong raises the corrupted sect treasure and laughs coldly at Lin Jin across the altar. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Senior Sister struggles against red-black demonic threads near the altar while Lin Jin sees the dream repeating. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "linjin-swordbone-c4-s1"
+    },
+    "linjin-swordbone-c4-s1": {
+      "type": "interactive",
+      "chapter": "第4章 · 祭坛背叛",
+      "title": "以前不行，但今天可以",
+      "prompt": "大师兄冷笑：林烬，就凭你也想阻止我？你可以拖住他，也可以逼问他为什么背叛宗门。",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "dashixiong",
+      "interaction_reason": "反派动机、宗门至宝和师姐入魔同时压顶，实时对话可让玩家试探背叛原因，但不能替代正式战斗选择。",
+      "current_goal": "保持傲慢与压迫，承认看不起林烬；可被玩家逼出一点嫉妒和恐惧；最后收束到攻击至宝或先救师姐。",
+      "forbidden": "不得主动投降，不得说出魔尊全盘计划，不得承诺师姐安全。",
+      "next": "linjin-swordbone-c4-choice"
+    },
+    "linjin-swordbone-c4-choice": {
+      "type": "choice",
+      "chapter": "第4章 · 祭坛背叛 · 正式抉择",
+      "title": "正式抉择",
+      "prompt": "剑骨只能先斩一个方向：宗门至宝，或正在入魔的师姐。",
+      "options": [
+        {
+          "id": "strike-treasure",
+          "label": "斩断宗门至宝，先阻止献祭",
+          "tone": "fate",
+          "state_delta": { "fate": 1, "risk": -2, "trust": -1 },
+          "next": "linjin-swordbone-c4-result-1"
+        },
+        {
+          "id": "save-shijie",
+          "label": "先救师姐，保住仍可被拉回的人",
+          "tone": "bond",
+          "state_delta": { "trust": 2, "bond": 1, "risk": 1 },
+          "next": "linjin-swordbone-c4-result-2"
+        }
+      ]
+    },
+    "linjin-swordbone-c4-result-1": {
+      "type": "cutscene",
+      "chapter": "第4章 · 祭坛背叛 · 结果",
+      "title": "至宝碎裂",
+      "narration": "林烬一剑斩碎宗门至宝，献祭被中断。可师姐被魔气卷走，回头看他的眼神像最后一声钟。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": ["lin-jin", "dashixiong", "shijie"],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Lin Jin leaps across the altar and raises a wooden sword wrapped in cyan light. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. The corrupted sect treasure shatters under the sword strike, throwing black and cyan sparks across Dashixiong's shocked face. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Senior Sister is pulled backward by demonic mist, looking at Lin Jin with pain and disbelief. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "linjin-swordbone-c5-setup"
+    },
+    "linjin-swordbone-c4-result-2": {
+      "type": "cutscene",
+      "chapter": "第4章 · 祭坛背叛 · 结果",
+      "title": "拉回师姐",
+      "narration": "林烬先斩断缠住师姐的魔线。她清醒一瞬，反手挡住大师兄，却让祭坛裂缝扩得更深。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": ["lin-jin", "shijie", "dashixiong"],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Lin Jin turns away from the treasure and cuts at the red-black demonic threads binding Senior Sister. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Senior Sister gasps awake and blocks Dashixiong's strike with a trembling sword. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Behind them the altar crack widens, black light rising higher as Lin Jin realizes the cost. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "linjin-swordbone-c5-setup"
+    },
+    "linjin-swordbone-c5-setup": {
+      "type": "cutscene",
+      "chapter": "第5章 · 改掉这个结局",
+      "title": "木剑里的天命",
+      "narration": "所有选择都把林烬推到梦境最后一幕。青云山血雾未散，他拔出木剑，三年沉睡的剑骨终于回应。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": ["lin-jin", "xuanqing"],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Qingyun mountain is half burning under blood-red mist as Lin Jin walks alone through broken stone steps. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Xuanqing Elder stands wounded behind him, pressing one last seal toward Lin Jin's wooden sword. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. The wooden sword cracks open with bright cyan sword-bone light, reflecting in Lin Jin's eyes. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "linjin-swordbone-c5-s1"
+    },
+    "linjin-swordbone-c5-s1": {
+      "type": "interactive",
+      "chapter": "第5章 · 改掉这个结局",
+      "title": "天命不是替所有人死",
+      "prompt": "林烬把剑尖抵在地上：如果只有我能改掉明天，那我是不是必须把自己也赔进去？",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "lin-jin",
+      "interaction_reason": "终局从证明自己转向是否牺牲自我，需要玩家确认主角不是灾难工具，而是有权选择的人。",
+      "current_goal": "承认自己想活，也想救宗门；回顾玩家前面的选择倾向；收束到燃尽剑骨封印裂缝或保留剑骨重建宗门。",
+      "forbidden": "不得提前宣布结局称号，不得让所有代价消失，不得新增第三种无损胜利。",
+      "next": "linjin-swordbone-c5-choice"
+    },
+    "linjin-swordbone-c5-choice": {
+      "type": "choice",
+      "chapter": "第5章 · 改掉这个结局 · 正式抉择",
+      "title": "正式抉择",
+      "prompt": "最后一剑，要斩向裂缝，还是斩向青云宗旧日的规矩？",
+      "options": [
+        {
+          "id": "burn-swordbone",
+          "label": "燃尽剑骨，立刻封死魔气裂缝",
+          "tone": "sacrifice",
+          "state_delta": { "fate": -2, "risk": -3, "trust": 2 },
+          "next": "linjin-swordbone-c5-result-1"
+        },
+        {
+          "id": "keep-swordbone",
+          "label": "保留剑骨，带活人重建青云宗",
+          "tone": "future",
+          "state_delta": { "fate": 2, "trust": 1, "truth": 1 },
+          "next": "linjin-swordbone-c5-result-2"
+        }
+      ]
+    },
+    "linjin-swordbone-c5-result-1": {
+      "type": "cutscene",
+      "chapter": "第5章 · 改掉这个结局 · 结果",
+      "title": "剑骨化钟",
+      "narration": "林烬燃尽剑骨封死裂缝。青色光落进宗门旧钟里，从此每一次灾厄到来前，钟都会提前响起。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": ["lin-jin", "xuanqing"],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Lin Jin thrusts his cyan sword into the demonic crack as his body glows painfully. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. The crack seals shut while cyan fragments rise from Lin Jin's chest toward the old sect bell. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. At dawn, survivors hear the bell ring softly with blue light as Xuanqing Elder bows his head. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "linjin-swordbone-ending"
+    },
+    "linjin-swordbone-c5-result-2": {
+      "type": "cutscene",
+      "chapter": "第5章 · 改掉这个结局 · 结果",
+      "title": "废物掌剑",
+      "narration": "林烬没有把自己烧成封印。他斩开祭坛，带着活下来的人撤出青云山，等下一个明天来临前重新布阵。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": ["lin-jin", "shijie", "xuanqing"],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Lin Jin cuts a path through collapsing altar stones without burning out his sword-bone light. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. Senior Sister and Xuanqing Elder help surviving disciples escape down the mountain behind Lin Jin. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Continue directly from the previous segment. At sunrise, Lin Jin plants the wooden sword into the earth and begins drawing a new protective array with survivors watching. Cinematic Chinese xianxia suspense, realistic film lighting, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "linjin-swordbone-ending"
+    },
+    "linjin-swordbone-ending": {
+      "type": "ending",
+      "chapter": "终局",
+      "title": "今天，改掉明天",
+      "text": "所有人都以为林烬是废物。只有他知道明天宗门会灭门。而今天，他终于让别人也学会在灾难前醒来。",
+      "variants": [
+        {
+          "when": { "truth": 2, "trust": 1 },
+          "title": "青云新钟",
+          "text": "三声钟不再只报灾厄。林烬把预知梦写成宗门戒律，让青云宗学会在灾难前醒来。"
+        },
+        {
+          "when": { "fate": 3 },
+          "title": "天命剑主",
+          "text": "剑骨没有成为枷锁。林烬带着幸存者重建青云，把天命改成人人可争的一线生机。"
+        },
+        {
+          "when": {},
+          "title": "思过崖的灯",
+          "text": "宗门没有立刻相信他，但思过崖的石门再也没有被锁死。后来每个说出异梦的人，都有人愿意先听完。"
+        }
+      ]
+    }
+  }
+}

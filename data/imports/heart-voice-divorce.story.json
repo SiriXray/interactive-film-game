@@ -1,0 +1,555 @@
+{
+  "id": "heart-voice-divorce",
+  "title": "心声离婚局",
+  "tagline": "她签下离婚协议那一秒，听见了冷漠丈夫藏了三年的求救。",
+  "genre": "豪门悬疑 / 心声反转 / 离婚清算",
+  "palette": "ink",
+  "skin": "mystery-puzzle",
+  "hero": "顾清宁",
+  "hero_character": "gu-qingning",
+  "model_plan": "首版复用 suspense 同组现代写实素材作为可玩成片；关键情绪冻结点使用 S1 第一人称对话，后续可按 render_plan 重新批量生成更贴合豪门离婚局的分镜。",
+  "state_labels": {
+    "evidence": "证据链",
+    "trust": "傅家暗盟",
+    "danger": "暴露风险",
+    "control": "清算主动权"
+  },
+  "initial_state": {
+    "evidence": 0,
+    "trust": 0,
+    "danger": 0,
+    "control": 0
+  },
+  "characters": [
+    {
+      "id": "gu-qingning",
+      "name": "顾清宁",
+      "role": "被豪门当成替身三年的妻子，离婚当日突然听见所有人的心声",
+      "voice": "Qiao",
+      "s1_voice": "Tina",
+      "image_prompt": "Vertical 9:16 realistic modern Chinese suspense character key art, Gu Qingning, a young woman in her mid twenties, short black hair, tired but controlled eyes, muted taupe hoodie, standing beside a cold mansion corridor and divorce papers, restrained wealthy-family thriller mood, no text, no watermark."
+    }
+  ],
+  "ending": {
+    "title": "离婚，也清算",
+    "text": "从听见第一句心声开始，顾清宁就不再只是替身太太。她把每一次羞辱、每一份沉默、每一张流水，都变成了收网的线。",
+    "variants": [
+      {
+        "when": {
+          "evidence": 4,
+          "control": 2
+        },
+        "title": "双线收网",
+        "text": "录音与流水同时落桌，傅家内鬼和顾家哥哥一起失手。顾清宁签完离婚，也拿回了傅氏核心账户的主动权。"
+      },
+      {
+        "when": {
+          "trust": 3,
+          "control": 2
+        },
+        "title": "暗盟反杀",
+        "text": "傅沉、婆婆和小姑终于撕开伪装，顾清宁借他们的保护完成反击。她没有原谅所有人，但让每个人付出该付的代价。"
+      },
+      {
+        "when": {
+          "danger": 2,
+          "evidence": 3
+        },
+        "title": "险中清算",
+        "text": "她赢下董事会，却也暴露了能听见心声的秘密。下一场追杀已经开始，但这一次她不再孤身一人。"
+      },
+      {
+        "when": {},
+        "title": "未完的录音",
+        "text": "证据还差最后一环。顾清宁离开傅家大门，把手机里的录音备份给陌生号码：清算还没结束。"
+      }
+    ]
+  },
+  "start": "heart-voice-divorce-c1-setup",
+  "nodes": {
+    "heart-voice-divorce-c1-setup": {
+      "type": "cutscene",
+      "chapter": "第1章 · 离婚协议",
+      "title": "签字那一秒",
+      "narration": "顾清宁被傅沉亲手推来离婚协议。她签字转身，却第一次听见傅沉心里在求她别走。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "gu-qingning"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. A long polished table in a silent luxury apartment; divorce papers slide into frame while Gu Qingning keeps her face calm and unreadable. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. Gu Qingning signs the final line, closes the pen, and turns toward the door as rain hits the window. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. She stops at the doorway, eyes shifting as if hearing an impossible inner voice from the cold man behind her. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "heart-voice-divorce-c1-s1"
+    },
+    "heart-voice-divorce-c1-s1": {
+      "type": "interactive",
+      "chapter": "第1章 · 离婚协议",
+      "title": "他的嘴和心声不一样",
+      "prompt": "傅沉嘴上说“别再纠缠”，心里却在求她别走。顾清宁低声问你：我该当场戳穿他，还是装作没听见先离开？",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "gu-qingning",
+      "interaction_reason": "这是心声能力第一次出现，也是离婚局的第一个反转，玩家需要先帮顾清宁稳住情绪和策略。",
+      "current_goal": "承认自己震惊但保持冷静；复述傅沉表面冷漠和心声求留的矛盾；把对话收束到离开或试探两个正式选择。",
+      "forbidden": "不得直接揭露幕后哥哥是敌人，不得承诺傅沉完全可信，不得新增第三个正式选择。",
+      "next": "heart-voice-divorce-c1-choice"
+    },
+    "heart-voice-divorce-c1-choice": {
+      "type": "choice",
+      "chapter": "第1章 · 离婚协议 · 正式抉择",
+      "title": "第一反应",
+      "prompt": "听见傅沉心声后，她要先保护自己，还是立刻试探他？",
+      "options": [
+        {
+          "id": "leave-with-recording",
+          "label": "装作没听见，带着录音和协议先离开",
+          "tone": "evidence",
+          "state_delta": {
+            "evidence": 1,
+            "danger": -1
+          },
+          "next": "heart-voice-divorce-c1-result-leave"
+        },
+        {
+          "id": "test-fu-chen",
+          "label": "回头追问，逼傅沉露出一秒破绽",
+          "tone": "trust",
+          "state_delta": {
+            "trust": 1,
+            "control": 1,
+            "danger": 1
+          },
+          "next": "heart-voice-divorce-c1-result-confront"
+        }
+      ]
+    },
+    "heart-voice-divorce-c1-result-leave": {
+      "type": "cutscene",
+      "chapter": "第1章 · 离婚协议 · 结果",
+      "title": "先离开，才有活路",
+      "narration": "顾清宁没有回头。电梯门合上前，她把手机录音备份到云端，也把傅沉那句心声记进了心里。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "gu-qingning"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Gu Qingning walks through a cold apartment corridor with a folder pressed to her chest, forcing herself not to look back. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. Inside the elevator, she secretly starts a phone backup while her hands tremble. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. The elevator doors close on her pale face as distant footsteps stop outside. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "heart-voice-divorce-c2-setup"
+    },
+    "heart-voice-divorce-c1-result-confront": {
+      "type": "cutscene",
+      "chapter": "第1章 · 离婚协议 · 结果",
+      "title": "一秒破绽",
+      "narration": "顾清宁回头问傅沉刚才说了什么。傅沉否认得很快，可他心里那句“离婚才能保住她”已经暴露了一半真相。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "gu-qingning"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Gu Qingning turns back from the doorway and fixes her gaze on the unseen man across the room, the signed divorce paper between them. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. A close view of her face as she realizes his silence is a performance, not indifference. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. She lowers her eyes, hiding the fact that she has already heard his true fear. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "heart-voice-divorce-c2-setup"
+    },
+    "heart-voice-divorce-c2-setup": {
+      "type": "cutscene",
+      "chapter": "第2章 · 傅家假面",
+      "title": "每一句刁难都在救她",
+      "narration": "婆婆表面厌恶，小姑表面刁难。可顾清宁听见的心声却全是道歉、催促和警告：再留在傅家会没命。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "gu-qingning"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. In a narrow mansion hallway, an older woman smiles coldly beside Gu Qingning while the atmosphere feels staged and hostile. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. Gu Qingning hears the hidden apology beneath the insult and freezes for half a breath. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. A younger female relative blocks the hallway, pretending to mock her while secretly warning her to run. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "heart-voice-divorce-c2-s1"
+    },
+    "heart-voice-divorce-c2-s1": {
+      "type": "interactive",
+      "chapter": "第2章 · 傅家假面",
+      "title": "敌人还是盟友",
+      "prompt": "顾清宁发现傅家人的表演可能是在保护她。她问你：我该相信傅家的警告，还是自己查清傅氏核心账户的秘密？",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "gu-qingning",
+      "interaction_reason": "玩家需要判断顾清宁该建立暗盟还是独自调查，这会影响证据速度、信任线和暴露风险。",
+      "current_goal": "表达对婆婆和小姑心声的动摇；说明傅氏核心账户与她有关；把讨论收束到相信警告或独自调查两个方向。",
+      "forbidden": "不得提前说哥哥是最终黑手，不得让傅家所有人立刻变成可信盟友，不得消除核心账户风险。",
+      "next": "heart-voice-divorce-c2-choice"
+    },
+    "heart-voice-divorce-c2-choice": {
+      "type": "choice",
+      "chapter": "第2章 · 傅家假面 · 正式抉择",
+      "title": "相信谁",
+      "prompt": "所有人都在演戏，她必须决定先抓住哪条线。",
+      "options": [
+        {
+          "id": "trust-fu-warning",
+          "label": "暂信傅家警告，逼婆婆和小姑给出暗号",
+          "tone": "trust",
+          "state_delta": {
+            "trust": 2,
+            "danger": -1
+          },
+          "next": "heart-voice-divorce-c2-result-trust"
+        },
+        {
+          "id": "investigate-alone",
+          "label": "不信任何人，独自追查核心账户流水",
+          "tone": "evidence",
+          "state_delta": {
+            "evidence": 2,
+            "danger": 1
+          },
+          "next": "heart-voice-divorce-c2-result-investigate"
+        }
+      ]
+    },
+    "heart-voice-divorce-c2-result-trust": {
+      "type": "cutscene",
+      "chapter": "第2章 · 傅家假面 · 结果",
+      "title": "暗号",
+      "narration": "婆婆把一盘水果推到顾清宁面前，盘底压着旧账户的半枚密钥。原来最难听的话，是傅家人替她挡刀的方式。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "gu-qingning"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. A quiet family room; an older woman places a fruit plate near Gu Qingning with a deliberately harsh expression. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. Gu Qingning notices a hidden account key taped beneath the plate. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. Their eyes meet for one second, both pretending nothing has happened. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "heart-voice-divorce-c3-setup"
+    },
+    "heart-voice-divorce-c2-result-investigate": {
+      "type": "cutscene",
+      "chapter": "第2章 · 傅家假面 · 结果",
+      "title": "账户墙",
+      "narration": "顾清宁把录音、合同编号和异常流水贴满整面墙。傅氏核心账户的入口，竟然一直绑定着她的身份。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "gu-qingning"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Gu Qingning spreads contracts, phone recordings, and bank-flow screenshots across a dim apartment table. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. She pins names and dates on a wall, connecting Fu family power transfers to her identity. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. A red line leads from Fu's core account to her own name, and her expression hardens. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "heart-voice-divorce-c3-setup"
+    },
+    "heart-voice-divorce-c3-setup": {
+      "type": "cutscene",
+      "chapter": "第3章 · 亲人背刺",
+      "title": "哥哥的心声",
+      "narration": "顾清宁以为真正的敌人在傅家。直到她听见亲哥哥的心声：只要她死了，傅氏和顾家的秘密就没人知道了。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "gu-qingning"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. A late-night phone call lights Gu Qingning's face; the caller name belongs to her older brother. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. She hears the murderous inner voice beneath his gentle words and goes still. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. Her phone drops slightly as the room behind her becomes colder and darker. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "heart-voice-divorce-c3-s1"
+    },
+    "heart-voice-divorce-c3-s1": {
+      "type": "interactive",
+      "chapter": "第3章 · 亲人背刺",
+      "title": "回去离婚，也回去清算",
+      "prompt": "第二天，顾清宁重新回到傅家。她问你：我该直接把证据摊开，还是设一个局让哥哥和内鬼自己跳出来？",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "gu-qingning",
+      "interaction_reason": "终局前的清算方式会决定证据完整度、风险暴露和顾清宁是否能掌控董事会节奏。",
+      "current_goal": "保持冷静和复仇决心；承认哥哥背叛带来的寒意；把策略收束到公开清算或设局反杀两个正式选择。",
+      "forbidden": "不得让哥哥提前认罪，不得让傅沉替她完成所有清算，不得直接跳过董事会对峙。",
+      "next": "heart-voice-divorce-c3-choice"
+    },
+    "heart-voice-divorce-c3-choice": {
+      "type": "choice",
+      "chapter": "第3章 · 亲人背刺 · 正式抉择",
+      "title": "收网方式",
+      "prompt": "傅家所有人都在桌边等她签字。她要把哪张牌先亮出来？",
+      "options": [
+        {
+          "id": "public-evidence",
+          "label": "公开录音、合同、流水，先夺回桌面主动权",
+          "tone": "control",
+          "state_delta": {
+            "evidence": 1,
+            "control": 2,
+            "danger": -1
+          },
+          "next": "heart-voice-divorce-c3-result-public"
+        },
+        {
+          "id": "set-the-trap",
+          "label": "假装签字设局，引哥哥和傅家内鬼自曝",
+          "tone": "risk",
+          "state_delta": {
+            "evidence": 2,
+            "control": 1,
+            "danger": 1
+          },
+          "next": "heart-voice-divorce-c3-result-trap"
+        }
+      ]
+    },
+    "heart-voice-divorce-c3-result-public": {
+      "type": "cutscene",
+      "chapter": "第3章 · 亲人背刺 · 结果",
+      "title": "证据落桌",
+      "narration": "顾清宁把录音、合同、账户流水一份份放在桌上。傅家人终于明白，替身太太已经换成了执棋人。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "gu-qingning"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. A glass boardroom table fills with printed contracts, voice-recorder files, and account-flow evidence. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. Gu Qingning pushes the final document forward, calm enough to make everyone else afraid. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. The unseen family members exchange panicked looks as she says this divorce is also a reckoning. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "heart-voice-divorce-ending"
+    },
+    "heart-voice-divorce-c3-result-trap": {
+      "type": "cutscene",
+      "chapter": "第3章 · 亲人背刺 · 结果",
+      "title": "让他们自己说出口",
+      "narration": "顾清宁假装妥协，把空白授权书递出去。哥哥和内鬼以为胜券在握，却在全场录音里亲口说出了交易。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "gu-qingning"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Gu Qingning places a blank authorization paper under the cold lights, pretending that she has finally surrendered. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. Hidden phone screens and recording lights appear in reflections across the room. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep Gu Qingning's face, modern hoodie outfit, cool blue lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. She lifts her eyes as the trap closes, quietly reclaiming the rhythm of the room. Chinese modern suspense interactive drama, cold wealthy-family interiors, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "heart-voice-divorce-ending"
+    },
+    "heart-voice-divorce-ending": {
+      "type": "ending",
+      "chapter": "终局",
+      "title": "离婚，也清算",
+      "text": "从听见第一句心声开始，顾清宁就不再只是替身太太。她把每一次羞辱、每一份沉默、每一张流水，都变成了收网的线。",
+      "variants": [
+        {
+          "when": {
+            "evidence": 4,
+            "control": 2
+          },
+          "title": "双线收网",
+          "text": "录音与流水同时落桌，傅家内鬼和顾家哥哥一起失手。顾清宁签完离婚，也拿回了傅氏核心账户的主动权。"
+        },
+        {
+          "when": {
+            "trust": 3,
+            "control": 2
+          },
+          "title": "暗盟反杀",
+          "text": "傅沉、婆婆和小姑终于撕开伪装，顾清宁借他们的保护完成反击。她没有原谅所有人，但让每个人付出该付的代价。"
+        },
+        {
+          "when": {
+            "danger": 2,
+            "evidence": 3
+          },
+          "title": "险中清算",
+          "text": "她赢下董事会，却也暴露了能听见心声的秘密。下一场追杀已经开始，但这一次她不再孤身一人。"
+        },
+        {
+          "when": {},
+          "title": "未完的录音",
+          "text": "证据还差最后一环。顾清宁离开傅家大门，把手机里的录音备份给陌生号码：清算还没结束。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,818 @@
+{
+  "id": "family-classmates-rewind",
+  "title": "重返高三：爸妈成了我同学",
+  "tagline": "高考失利后的车祸，把一家三口同时送回高三；这一次，先学会听见彼此。",
+  "genre": "校园奇幻 / 家庭共情 / 重生",
+  "palette": "campus",
+  "skin": "campus-rebirth",
+  "hero": "陆星辰",
+  "hero_character": "lu-xingchen",
+  "model_plan": "关键叙事由 15 秒 Q3 Mix / Q3 Drama 连续成片承接；四个高情绪节点进入 S1 第一人称实时对话，用于身份压制、梦想试探、遗憾弥补与命运让渡。",
+  "state_labels": {
+    "understanding": "理解值",
+    "future": "前路值",
+    "courage": "勇气值",
+    "conflict": "冲突值"
+  },
+  "initial_state": {
+    "understanding": 0,
+    "future": 0,
+    "courage": 0,
+    "conflict": 0
+  },
+  "characters": [
+    {
+      "id": "lu-xingchen",
+      "name": "陆星辰",
+      "role": "高三复读边缘的少年，带着车祸后的记忆重新回到教室",
+      "voice": "Juniper",
+      "s1_voice": "Ryan",
+      "asset_path": "D:\\AI剧\\角色人物图\\角色资产图，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "s1_portrait_path": "D:\\AI剧\\角色人物图\\角色资产图，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "image_prompt": "Vertical 9:16 cinematic Chinese modern campus character key art, Lu Xingchen, an eighteen-year-old male student with tired but sharp eyes, white school shirt under a dark blazer, loosened tie, humid summer classroom light, realistic drama portrait, no text, no watermark."
+    },
+    {
+      "id": "young-lu-mingchuan",
+      "name": "年轻陆明川",
+      "role": "十八岁的父亲，热血外放，心里还装着篮球和没说出口的责任",
+      "voice": "Dylan",
+      "s1_voice": "Andre",
+      "asset_path": "D:\\AI剧\\角色人物图\\角色资产图，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "s1_portrait_path": "D:\\AI剧\\角色人物图\\角色资产图，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "image_prompt": "Vertical 9:16 cinematic Chinese modern campus character key art, young Lu Mingchuan, athletic male high-school student, sun-browned skin, confident grin, rolled-up school uniform sleeves, a basketball tucked under one arm, sunset light on an outdoor court, realistic drama, no text, no watermark."
+    },
+    {
+      "id": "young-xu-tang",
+      "name": "年轻许棠",
+      "role": "十八岁的母亲，安静发亮，把舞蹈和家人都看得很重",
+      "voice": "Qiao",
+      "s1_voice": "Tina",
+      "asset_path": "D:\\AI剧\\角色人物图\\角色资产图，妈妈许棠，剧本中的人物资产，需要保持形象和声音一致。，妈妈许棠，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "s1_portrait_path": "D:\\AI剧\\角色人物图\\角色资产图，妈妈许棠，剧本中的人物资产，需要保持形象和声音一致。，妈妈许棠，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "image_prompt": "Vertical 9:16 cinematic Chinese modern campus character key art, young Xu Tang, graceful female high-school student, long dark hair tied back for dance practice, soft but determined gaze, white rehearsal shirt and navy skirt, reflected studio mirror light, realistic drama, no text, no watermark."
+    },
+    {
+      "id": "head-teacher",
+      "name": "班主任",
+      "role": "把课堂秩序看得比什么都重，却总能看见学生没说出口的慌张",
+      "voice": "Atlas",
+      "asset_path": "D:\\AI剧\\角色人物图\\角色资产图，班主任，剧本中的人物资产，需要保持形象和声音一致。，班主任，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "image_prompt": "Vertical 9:16 cinematic Chinese modern classroom authority portrait, a serious but observant homeroom teacher in a light gray shirt, chalk dust in warm daylight, realistic campus drama, no text, no watermark."
+    },
+    {
+      "id": "system-voice",
+      "name": "系统声音",
+      "role": "在时间线边缘发出冷静播报的规则化存在",
+      "voice": "Atlas",
+      "asset_path": "D:\\AI剧\\角色人物图\\角色资产图，系统声音，剧本中的人物资产，需要保持形象和声音一致。，系统声音，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "image_prompt": "Vertical 9:16 cinematic symbolic portrait for a timeline system voice, androgynous figure in dark neutral clothing, rim light and floating dust, realistic but uncanny, no text, no watermark."
+    },
+    {
+      "id": "truck-driver",
+      "name": "货车司机",
+      "role": "车祸瞬间的功能性角色，连接旧结局与新时间线",
+      "voice": "Atlas",
+      "asset_path": "D:\\AI剧\\角色人物图\\车祸司机，剧本中的功能性角色 ，中式悬疑惊悚，电影感打光，真实人物设定，细节丰富，高张力情绪.png",
+      "image_prompt": "Vertical 9:16 cinematic Chinese modern accident driver portrait, middle-aged male truck driver caught in sudden headlights and rain, realistic high-tension drama, no text, no watermark."
+    }
+  ],
+  "ending": {
+    "title": "这一次，先替自己活",
+    "text": "父母没有真的离开你的生命，他们只是终于把那份爱，从“替你决定”放回到了“让你自己去活”。",
+    "variants": [
+      {
+        "when": {
+          "understanding": 3,
+          "future": 3
+        },
+        "title": "把自己活成答案",
+        "text": "陆星辰带着年轻父母留给他的那点光，考进理想大学。多年后再回到那个路口，他终于能平静地说：这一次，我不是为了谁争气，我是在认真过我的人生。"
+      },
+      {
+        "when": {
+          "understanding": 3,
+          "courage": 2
+        },
+        "title": "我们终于互相听见",
+        "text": "他没有走上最稳的路，却走上了自己真正想走的那条。每当想起教室、操场和舞蹈房里年轻的他们，陆星辰都知道，那些没说出口的爱终于被听见了。"
+      },
+      {
+        "when": {
+          "conflict": 3
+        },
+        "title": "没说完的那句对不起",
+        "text": "他还是考完了试，却把最后那次拥抱抓得太晚。成长并不总是圆满，有些道歉只能留在后来的人生里，一遍遍学着补上。"
+      },
+      {
+        "when": {},
+        "title": "铃声之后",
+        "text": "校门外的人潮散去，年轻的爸妈像夏天里一阵短暂的风。陆星辰知道，真正留下来的不是奇迹，而是终于被看见的彼此。"
+      }
+    ]
+  },
+  "start": "family-classmates-rewind-c1-setup",
+  "nodes": {
+    "family-classmates-rewind-c1-setup": {
+      "type": "cutscene",
+      "chapter": "第1章 · 爸妈成了转学生",
+      "title": "再睁眼，还是高三",
+      "narration": "高考失利后的争吵和车祸还卡在耳边，陆星辰再睁眼时却已经坐回高三教室。班主任推门介绍两名转学生，讲台上的年轻男女，正是年轻了二十岁的爸妈。",
+      "pre_generated": true,
+      "poster_path": "D:\\AI剧\\角色人物图\\角色资产图，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "lu-xingchen",
+          "young-lu-mingchuan",
+          "young-xu-tang",
+          "head-teacher"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, classroom layout, and lighting consistent with the supplied character references. A modern Chinese high-school classroom after afternoon self-study; Lu Xingchen jerks awake at his desk, still hearing the echo of a crash and his own argument with his parents. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, classroom layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. The homeroom teacher opens the door and announces two transfer students as the class looks up in surprise. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, classroom layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Lu Xingchen stares at the podium in disbelief as young Lu Mingchuan and young Xu Tang meet his gaze with the same stunned recognition. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "family-classmates-rewind-c1-s1"
+    },
+    "family-classmates-rewind-c1-s1": {
+      "type": "interactive",
+      "chapter": "第1章 · 爸妈成了转学生",
+      "title": "别在全班面前喊出那两个字",
+      "prompt": "年轻的爸妈也带着记忆回来了。陆星辰喉咙发紧，下一秒就要当众喊出“爸妈”。你可以先让他稳住，也可以逼他确认这是不是同一场车祸后的重来。",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "lu-xingchen",
+      "interaction_reason": "这是三人第一次在同一时间线重新相遇；一旦当众失控，后续的隐藏身份和观察空间会立刻缩窄。",
+      "current_goal": "先稳住情绪，确认父母也拥有旧记忆，再把讨论收束到“先隐瞒”或“当场追问”两种正式选择。",
+      "forbidden": "不得直接宣布时间线规则，不得替老师或全班同学开口，不得让陆星辰立刻离校或跳出当前课堂。",
+      "interaction_mode": "身份压制 / 情绪对峙",
+      "live_brief": "先把心跳压下来，再决定这场重逢要藏住还是摊开。玩家的说话方式会改变陆星辰是强撑冷静还是彻底失控。",
+      "live_directives": [
+        "别在全班面前喊爸妈",
+        "先问他们记不记得车祸",
+        "把手从桌角上松开"
+      ],
+      "start_label": "先别失控",
+      "persona_rules": "对安抚和低声指令表现为呼吸慢下来、视线收紧、重新组织语言；对逼问和强硬语气表现为脖颈绷紧、眼圈发红、说话更冲，但仍不能跳过正式选择。",
+      "poster_path": "D:\\AI剧\\角色人物图\\角色资产图，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "next": "family-classmates-rewind-c1-choice"
+    },
+    "family-classmates-rewind-c1-choice": {
+      "type": "choice",
+      "chapter": "第1章 · 爸妈成了转学生 · 正式抉择",
+      "title": "正式抉择",
+      "prompt": "这一次重逢，要先藏，还是先撕开？",
+      "options": [
+        {
+          "id": "hide-identity",
+          "label": "先装作不认识，把这一世的异常看清楚",
+          "tone": "truth",
+          "state_delta": {
+            "understanding": 1
+          },
+          "next": "family-classmates-rewind-c1-result-1"
+        },
+        {
+          "id": "expose-identity",
+          "label": "当场追问，逼他们承认也一起回来了",
+          "tone": "family",
+          "state_delta": {
+            "courage": 1,
+            "conflict": 1
+          },
+          "next": "family-classmates-rewind-c1-result-2"
+        }
+      ]
+    },
+    "family-classmates-rewind-c1-result-1": {
+      "type": "cutscene",
+      "chapter": "第1章 · 爸妈成了转学生 · 结果",
+      "title": "三个人都把话咽了回去",
+      "narration": "陆星辰死死咬住后槽牙，没有把那声“爸妈”喊出来。讲台上的两个人也只是短促对视，像什么都没发生，却都在同一瞬间白了脸。",
+      "pre_generated": true,
+      "poster_path": "D:\\AI剧\\角色人物图\\角色资产图，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "lu-xingchen",
+          "young-lu-mingchuan",
+          "young-xu-tang",
+          "head-teacher"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, classroom layout, and lighting consistent with the supplied character references. Lu Xingchen forces himself silent, fingers digging into the edge of his desk while the teacher continues the introduction. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, classroom layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Young Lu Mingchuan catches Lu Xingchen's eye and gives the faintest warning shake of the head while Xu Tang lowers her lashes to hide panic. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, classroom layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. The three of them sit in the same classroom under the same afternoon light, carrying an impossible shared secret. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "family-classmates-rewind-c2-setup"
+    },
+    "family-classmates-rewind-c1-result-2": {
+      "type": "cutscene",
+      "chapter": "第1章 · 爸妈成了转学生 · 结果",
+      "title": "全班都听见了那一声爸妈",
+      "narration": "那声“爸妈”还是冲出了喉咙，教室里瞬间安静。年轻的陆明川反应最快，笑着把它圆成一句玩笑，可三个人的眼神都已经彻底乱了。",
+      "pre_generated": true,
+      "poster_path": "D:\\AI剧\\角色人物图\\角色资产图，班主任，剧本中的人物资产，需要保持形象和声音一致。，班主任，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "lu-xingchen",
+          "young-lu-mingchuan",
+          "young-xu-tang",
+          "head-teacher"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, classroom layout, and lighting consistent with the supplied character references. Lu Xingchen stands abruptly and blurts out 'Dad, Mom,' freezing the classroom mid-breath. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, classroom layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Young Lu Mingchuan laughs it off as a prank while Xu Tang grips the podium edge hard enough to whiten her knuckles. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, classroom layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. The teacher resumes class, but whispers ripple through the room and the three family members all avoid looking normal. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "family-classmates-rewind-c2-setup"
+    },
+    "family-classmates-rewind-c2-setup": {
+      "type": "cutscene",
+      "chapter": "第2章 · 他年轻时也想打球",
+      "title": "操场边的那次试训",
+      "narration": "放学后的操场热得发白。年轻的陆明川瞒着所有人去篮球队试训，膝盖却在落地时磕出血。陆星辰第一次看见，原来父亲也曾经差一点就把梦想抓在手里。",
+      "pre_generated": true,
+      "poster_path": "D:\\AI剧\\角色人物图\\角色资产图，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "lu-xingchen",
+          "young-lu-mingchuan"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, court layout, and lighting consistent with the supplied character references. Late-afternoon high-school basketball tryout; young Lu Mingchuan cuts through defenders with raw speed while Lu Xingchen watches from the fence in disbelief. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, court layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Lu Mingchuan lands badly on his knee, still clutching the ball as dust and pain flare across his face. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, court layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Hidden under the bleachers, Lu Mingchuan presses his bleeding knee and laughs bitterly before anyone can see. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "family-classmates-rewind-c2-s1"
+    },
+    "family-classmates-rewind-c2-s1": {
+      "type": "interactive",
+      "chapter": "第2章 · 他年轻时也想打球",
+      "title": "别替未来先把梦想判死刑",
+      "prompt": "年轻陆明川把伤口藏在校裤后面，装得像没事一样。他嘴上说只是随便玩玩，眼睛却还盯着球框。你可以劝他去试一次，也可以提醒他别再重蹈后来的生活轨迹。",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "young-lu-mingchuan",
+      "interaction_reason": "这是陆明川第一次在儿子面前露出年轻时被迫收起的热血；一次鼓励或否决，会直接改变陆星辰理解父亲的方式。",
+      "current_goal": "让陆明川承认自己真的想继续打球，再把讨论收束到“支持试训”或“拉他回书桌”两种正式选择。",
+      "forbidden": "不得提前说出成年后的婚姻或事业结局，不得承诺他一定能进队，不得增加第三条人生路线。",
+      "interaction_mode": "梦想试探 / 代际反转",
+      "live_brief": "玩家是在和年轻的父亲谈他从未说出口的那团火。越真诚，他越肯承认自己不是只会说“为了你好”的大人。",
+      "live_directives": [
+        "去试一次，不用先输给现实",
+        "先把膝盖给我看",
+        "告诉我你到底舍不舍得"
+      ],
+      "start_label": "别装没事",
+      "persona_rules": "对支持和直视情绪的语句表现为嘴硬后松口、肩膀放松、把篮球抱得更紧；对现实导向的提醒表现为沉默、低头笑一下、重新把热血压回去。",
+      "poster_path": "D:\\AI剧\\角色人物图\\角色资产图，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "next": "family-classmates-rewind-c2-choice"
+    },
+    "family-classmates-rewind-c2-choice": {
+      "type": "choice",
+      "chapter": "第2章 · 他年轻时也想打球 · 正式抉择",
+      "title": "正式抉择",
+      "prompt": "这一次，要不要让父亲先为自己活一次？",
+      "options": [
+        {
+          "id": "support-basketball",
+          "label": "陪他回到球场，至少把这次试训走完",
+          "tone": "bond",
+          "state_delta": {
+            "understanding": 1,
+            "courage": 1
+          },
+          "next": "family-classmates-rewind-c2-result-1"
+        },
+        {
+          "id": "pull-back-to-study",
+          "label": "劝他收手，把分数和未来排在前面",
+          "tone": "future",
+          "state_delta": {
+            "future": 1,
+            "conflict": 1
+          },
+          "next": "family-classmates-rewind-c2-result-2"
+        }
+      ]
+    },
+    "family-classmates-rewind-c2-result-1": {
+      "type": "cutscene",
+      "chapter": "第2章 · 他年轻时也想打球 · 结果",
+      "title": "操场上的夏风重新吹过",
+      "narration": "陆星辰把球重新丢回父亲怀里。年轻的陆明川咬着牙站起来，拖着伤腿把最后一轮试训打完，笑得像从没被生活按住过。",
+      "pre_generated": true,
+      "poster_path": "D:\\AI剧\\角色人物图\\角色资产图，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，爸爸陆明川，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "young-lu-mingchuan",
+          "lu-xingchen"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, court layout, and lighting consistent with the supplied character references. Lu Xingchen tosses the ball back and young Lu Mingchuan looks at it like he has been handed time itself. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, court layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Limping but fierce, Lu Mingchuan drives toward the rim in the orange sunset while sweat and pain flash across his face. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, court layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. He sinks the last shot, looking back toward Lu Xingchen with a grin that adult fatherhood never got to wear. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "family-classmates-rewind-c3-setup"
+    },
+    "family-classmates-rewind-c2-result-2": {
+      "type": "cutscene",
+      "chapter": "第2章 · 他年轻时也想打球 · 结果",
+      "title": "他把球塞回了铁丝网后",
+      "narration": "陆明川把球慢慢放回器材箱，嘴上说“你说得也对”。可陆星辰第一次看见，原来父亲把热血收回去的时候，也会有那么短的一秒，看起来像输了整整一个夏天。",
+      "pre_generated": true,
+      "poster_path": "D:\\AI剧\\角色人物图\\角色资产图，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "young-lu-mingchuan",
+          "lu-xingchen"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, court layout, and lighting consistent with the supplied character references. Lu Mingchuan listens in silence, then wipes the blood from his knee with a half-joking shrug. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, court layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. He returns the basketball to the equipment cage and rests his forehead against the wire for a brief, private second. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, court layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Lu Xingchen watches his father walk back toward the teaching building, taller than before but carrying a visible weight. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "family-classmates-rewind-c3-setup"
+    },
+    "family-classmates-rewind-c3-setup": {
+      "type": "cutscene",
+      "chapter": "第3章 · 她也曾站在追光里",
+      "title": "舞蹈房的镜子没有说谎",
+      "narration": "为了弥补遗憾，年轻许棠偷偷报名了校园舞蹈比赛。晚自习铃声快响时，陆星辰推开排练室门，看见母亲在镜子前旋身发亮，那一瞬间她不像谁的妈妈，只像十八岁本来的自己。",
+      "pre_generated": true,
+      "poster_path": "D:\\AI剧\\角色人物图\\角色资产图，妈妈许棠，剧本中的人物资产，需要保持形象和声音一致。，妈妈许棠，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "young-xu-tang",
+          "lu-xingchen"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, rehearsal-room layout, and lighting consistent with the supplied character references. In a high-school dance room at dusk, young Xu Tang practices alone while golden light cuts across dust and mirrors. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, rehearsal-room layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Xu Tang misses a beat, steadies herself, and smiles softly at her own reflection as if remembering a dream she once buried. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, rehearsal-room layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Lu Xingchen appears in the doorway holding exam papers, realizing for the first time that his mother once had a stage of her own. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "family-classmates-rewind-c3-s1"
+    },
+    "family-classmates-rewind-c3-s1": {
+      "type": "interactive",
+      "chapter": "第3章 · 她也曾站在追光里",
+      "title": "别急着把她拉回懂事的大人",
+      "prompt": "年轻许棠知道再练下去就可能错过晚自习，也知道这支舞是她一直没能补上的遗憾。你可以鼓励她上台，也可以提醒她高考和现实不会等人。",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "young-xu-tang",
+      "interaction_reason": "许棠第一次在儿子面前显露“母亲”身份之外的自己；玩家的回应会决定她是勇敢发光，还是再次把心愿折回去。",
+      "current_goal": "让许棠承认自己并不是只想做一个完美妈妈，而是真的想跳这支舞，再把讨论收束到“帮她上台”或“拉她回晚自习”两种正式选择。",
+      "forbidden": "不得保证比赛一定获奖，不得提前说明未来婚姻结局，不得让许棠立刻放弃高考或彻底改写人生方向。",
+      "interaction_mode": "遗憾弥补 / 情绪共振",
+      "live_brief": "先听她为什么舍不得，再决定要把她推向舞台还是推回课桌。越温柔具体，她越敢承认自己也会想为自己发一次光。",
+      "live_directives": [
+        "把这支舞跳完",
+        "先告诉我你最舍不得什么",
+        "别总拿懂事压住自己"
+      ],
+      "start_label": "先听她说完",
+      "persona_rules": "对鼓励与共情表现为眼神发亮、动作放松、重新站到镜子前；对现实与分数的提醒表现为笑意收回、手指攥紧裙角、主动把情绪压回理性。",
+      "poster_path": "D:\\AI剧\\角色人物图\\角色资产图，妈妈许棠，剧本中的人物资产，需要保持形象和声音一致。，妈妈许棠，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "next": "family-classmates-rewind-c3-choice"
+    },
+    "family-classmates-rewind-c3-choice": {
+      "type": "choice",
+      "chapter": "第3章 · 她也曾站在追光里 · 正式抉择",
+      "title": "正式抉择",
+      "prompt": "这一次，要不要帮她把遗憾跳完？",
+      "options": [
+        {
+          "id": "help-her-dance",
+          "label": "陪她把这一支舞跳到台上",
+          "tone": "heart",
+          "state_delta": {
+            "understanding": 1,
+            "courage": 1
+          },
+          "next": "family-classmates-rewind-c3-result-1"
+        },
+        {
+          "id": "protect-the-score",
+          "label": "拉她回教室，把考试放在第一位",
+          "tone": "future",
+          "state_delta": {
+            "future": 2,
+            "conflict": 1
+          },
+          "next": "family-classmates-rewind-c3-result-2"
+        }
+      ]
+    },
+    "family-classmates-rewind-c3-result-1": {
+      "type": "cutscene",
+      "chapter": "第3章 · 她也曾站在追光里 · 结果",
+      "title": "她终于站回了光里",
+      "narration": "许棠赶在最后一刻上了台。聚光灯落下时，陆星辰怔怔看着舞台中央那个明亮的少女，第一次明白，原来母亲也曾有过不该被家庭吞掉的名字和锋芒。",
+      "pre_generated": true,
+      "poster_path": "D:\\AI剧\\角色人物图\\角色资产图，妈妈许棠，剧本中的人物资产，需要保持形象和声音一致。，妈妈许棠，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "young-xu-tang",
+          "lu-xingchen"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, stage layout, and lighting consistent with the supplied character references. Xu Tang steps from backstage into the school auditorium lights, breathing fast but smiling for real. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, stage layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. She spins through the center of the stage with a confidence that makes the audience fall still. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, stage layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. In the dark audience, Lu Xingchen looks up with wet eyes, seeing not just his mother but the girl she once was. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "family-classmates-rewind-c4-setup"
+    },
+    "family-classmates-rewind-c3-result-2": {
+      "type": "cutscene",
+      "chapter": "第3章 · 她也曾站在追光里 · 结果",
+      "title": "她把舞鞋收回了柜子里",
+      "narration": "许棠还是换回了校服，跟着铃声走回教室。她没有抱怨，只是在路过舞蹈房镜子时多看了一眼自己，像把一束光亲手折进了抽屉里。",
+      "pre_generated": true,
+      "poster_path": "D:\\AI剧\\角色人物图\\角色资产图，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "young-xu-tang",
+          "lu-xingchen"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, rehearsal-room layout, and lighting consistent with the supplied character references. Xu Tang listens quietly, then kneels to lace her shoes closed and cover them with a practice bag. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, rehearsal-room layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. She switches back into her school uniform beneath the mirror light, carefully wiping away any trace of performance. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, rehearsal-room layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. As she leaves for evening study, Xu Tang glances once more at her reflection, and Lu Xingchen understands how often adults call self-erasure 'being sensible.' Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "family-classmates-rewind-c4-setup"
+    },
+    "family-classmates-rewind-c4-setup": {
+      "type": "cutscene",
+      "chapter": "第4章 · 高考前夜只能留下一个人",
+      "title": "系统在走廊尽头响起",
+      "narration": "高考前一天的夜里，三个人终于在空走廊里摊开真相。下一秒，冰冷的系统声音落下：这条时间线里，只有一个人能够改变命运，其余两人都会回到原本的结局。",
+      "pre_generated": true,
+      "poster_path": "D:\\AI剧\\角色人物图\\角色资产图，系统声音，剧本中的人物资产，需要保持形象和声音一致。，系统声音，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "lu-xingchen",
+          "young-lu-mingchuan",
+          "young-xu-tang",
+          "system-voice"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, corridor layout, and lighting consistent with the supplied character references. In a dim school corridor the night before the gaokao, Lu Xingchen and his young parents finally stop pretending they are strangers. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, corridor layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Dust trembles in the hallway lights as a disembodied system voice coldly announces that only one of the three may change fate. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, corridor layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Both young parents almost simultaneously turn toward Lu Xingchen instead of toward themselves, already making the same sacrifice. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "family-classmates-rewind-c4-s1"
+    },
+    "family-classmates-rewind-c4-s1": {
+      "type": "interactive",
+      "chapter": "第4章 · 高考前夜只能留下一个人",
+      "title": "别把这一世也活成遗憾",
+      "prompt": "年轻的爸妈几乎同时把留下来的机会推给了陆星辰。可他只想把他们都留住。你可以陪他把这一刻听明白，也可以继续逼问有没有第三种办法。",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "lu-xingchen",
+      "interaction_reason": "这是整条时间线最核心的告别节点；如果陆星辰不能真正听见父母的选择，他仍会把人生活成替别人完成期待的样子。",
+      "current_goal": "让陆星辰明白父母回来的目的不是重活一次，而是让他不再后悔；再把讨论收束到“接受成全去考试”或“回头找第三种办法”两种正式选择。",
+      "forbidden": "不得承诺三个人都能永久留下，不得篡改系统规则，不得跳过高考当天直接给出结局。",
+      "interaction_mode": "命运让渡 / 告别授权",
+      "live_brief": "这一轮对话不是为了赢规则，而是为了让陆星辰第一次把自己的人生拿回自己手里。玩家的语气会决定他是终于听见，还是继续死抓不放。",
+      "live_directives": [
+        "先听完他们的话",
+        "别把自己的人生再让出去",
+        "带着他们的爱去考场"
+      ],
+      "start_label": "先听懂这次成全",
+      "persona_rules": "对温和坚定的陪伴表现为哭腔压住、眼神慢慢聚焦、愿意承认自己也想为自己活；对执拗和逃避表现为呼吸紊乱、不断摇头、试图寻找并不存在的第三条规则漏洞。",
+      "poster_path": "D:\\AI剧\\角色人物图\\角色资产图，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "next": "family-classmates-rewind-c4-choice"
+    },
+    "family-classmates-rewind-c4-choice": {
+      "type": "choice",
+      "chapter": "第4章 · 高考前夜只能留下一个人 · 正式抉择",
+      "title": "正式抉择",
+      "prompt": "铃响前最后一次，你要往前走，还是回头抓住他们？",
+      "options": [
+        {
+          "id": "take-the-exam",
+          "label": "接受他们的成全，按自己的路走进考场",
+          "tone": "future",
+          "state_delta": {
+            "future": 2,
+            "understanding": 1
+          },
+          "next": "family-classmates-rewind-c4-result-1"
+        },
+        {
+          "id": "search-for-loop",
+          "label": "不肯放手，回头继续寻找第三种办法",
+          "tone": "family",
+          "state_delta": {
+            "courage": 1,
+            "conflict": 1
+          },
+          "next": "family-classmates-rewind-c4-result-2"
+        }
+      ]
+    },
+    "family-classmates-rewind-c4-result-1": {
+      "type": "cutscene",
+      "chapter": "第4章 · 高考前夜只能留下一个人 · 结果",
+      "title": "他终于坐回了考场",
+      "narration": "高考铃声响起时，陆星辰没有再回头。他坐进考场，笔尖落下，终于第一次不是为了谁的期待，而是为了自己的人生写答案。校门外，年轻的爸妈在阳光里朝他挥手，身影一点点变淡。",
+      "pre_generated": true,
+      "poster_path": "D:\\AI剧\\角色人物图\\角色资产图，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，陆星辰，剧本中的人物资产，需要保持形象和声音一致。，真人写实，电影感打光，主体清晰，角色一致性参考图，单一主体，清晰构图，避免文字水印，适合后续 Vidu 解说剧资产一致性.png",
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "lu-xingchen",
+          "young-lu-mingchuan",
+          "young-xu-tang"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, exam venue, and lighting consistent with the supplied character references. Morning of the gaokao: Lu Xingchen steps through the school gate with trembling breath, no longer turning back. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, exam venue, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. In the exam hall, his pen finally touches paper with a steadier hand than ever before. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, props, exam venue, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. After the exam, he looks toward the gate and sees his young parents smiling in sunlight as their silhouettes slowly begin to fade. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "family-classmates-rewind-ending"
+    },
+    "family-classmates-rewind-c4-result-2": {
+      "type": "cutscene",
+      "chapter": "第4章 · 高考前夜只能留下一个人 · 结果",
+      "title": "他还是想把他们一起留下",
+      "narration": "陆星辰冲回走廊尽头，一遍遍想找出规则漏洞。可铃声还是到了，父母却只把他往考场方向推。等他终于转身时，世界已经开始从他们身上褪色。",
+      "pre_generated": true,
+      "poster_path": "D:\\AI剧\\角色人物图\\车祸司机，剧本中的功能性角色 ，中式悬疑惊悚，电影感打光，真实人物设定，细节丰富，高张力情绪.png",
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "lu-xingchen",
+          "young-lu-mingchuan",
+          "young-xu-tang",
+          "truck-driver"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, corridor layout, and lighting consistent with the supplied character references. Lu Xingchen runs through the empty corridor calling for another answer while the echoes of the old car crash start bleeding back into the soundscape. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, corridor layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Young Lu Mingchuan and Xu Tang catch up, each placing a hand on Lu Xingchen's shoulder and gently but firmly turning him toward the exam building. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-drama",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, costumes, corridor layout, and lighting consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. As he looks back one last time, the light on their faces thins into the memory of the road and the truck that once changed everything. Cinematic family fantasy drama, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "family-classmates-rewind-ending"
+    },
+    "family-classmates-rewind-ending": {
+      "type": "ending",
+      "chapter": "终局",
+      "title": "这一次，先替自己活",
+      "text": "父母没有真的离开你的生命，他们只是终于把那份爱，从“替你决定”放回到了“让你自己去活”。",
+      "variants": [
+        {
+          "when": {
+            "understanding": 3,
+            "future": 3
+          },
+          "title": "把自己活成答案",
+          "text": "陆星辰带着年轻父母留给他的那点光，考进理想大学。多年后再回到那个路口，他终于能平静地说：这一次，我不是为了谁争气，我是在认真过我的人生。"
+        },
+        {
+          "when": {
+            "understanding": 3,
+            "courage": 2
+          },
+          "title": "我们终于互相听见",
+          "text": "他没有走上最稳的路，却走上了自己真正想走的那条。每当想起教室、操场和舞蹈房里年轻的他们，陆星辰都知道，那些没说出口的爱终于被听见了。"
+        },
+        {
+          "when": {
+            "conflict": 3
+          },
+          "title": "没说完的那句对不起",
+          "text": "他还是考完了试，却把最后那次拥抱抓得太晚。成长并不总是圆满，有些道歉只能留在后来的人生里，一遍遍学着补上。"
+        },
+        {
+          "when": {},
+          "title": "铃声之后",
+          "text": "校门外的人潮散去，年轻的爸妈像夏天里一阵短暂的风。陆星辰知道，真正留下来的不是奇迹，而是终于被看见的彼此。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+# Secrets
+.env
+_console_pass.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Logs
+*.log
+*.err.log
+*.out.log
+_app.err
+_app.out
+_fake_kb.err
+_fake_kb.out
+_probe_console.log
+
+# Temp / generated at runtime
+tmp/
+uploads/
+generated/
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

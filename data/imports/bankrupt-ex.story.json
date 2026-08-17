@@ -1,0 +1,580 @@
+{
+  "id": "bankrupt-ex",
+  "title": "前任破产系统",
+  "tagline": "离婚当天他把银行卡砸在我脸上。那一刻，一个让前夫越骂越穷的系统，绑定了我。",
+  "genre": "都市爽剧 / 系统流 / 离婚清算 / 商战反转",
+  "palette": "system",
+  "skin": "system-revenge",
+  "hero": "宋以安",
+  "hero_character": "song-yian",
+  "model_plan": "剧情主线用 Q3 Mix 预生成 15 秒电影级成片；离婚绑定、隐藏任务、跪求复婚三个高情绪抉择点开启 S1 第一人称实时对话，让玩家从旁观的宋以安变成掌控清算节奏的编剧导演。",
+  "state_labels": {
+    "assets": "秦氏资产缩水",
+    "system": "系统进度",
+    "truth": "做空真相线索",
+    "control": "清算主动权"
+  },
+  "initial_state": {
+    "assets": 0,
+    "system": 0,
+    "truth": 0,
+    "control": 0
+  },
+  "source_assets": {
+    "song-yian": "D:\\AI剧\\角色人物图\\宋以安.png",
+    "qin-yue": "D:\\AI剧\\角色人物图\\秦越.png",
+    "bai-xiaoman": "D:\\AI剧\\角色人物图\\白小蛮.png"
+  },
+  "characters": [
+    {
+      "id": "song-yian",
+      "name": "宋以安",
+      "role": "被前夫当众羞辱的离婚女主，被前任破产系统绑定，最终收购秦氏",
+      "voice": "Maia",
+      "s1_voice": "Maia",
+      "image_prompt": "Vertical 9:16 realistic modern Chinese urban drama character key art, Song Yian, a composed woman in her late twenties, straight black hair, calm and intelligent eyes that hide steel, elegant off-white coat over a slate business dress, standing at the marble steps of a civil affairs bureau, restrained wronged-then-rising heroine mood, no text, no watermark."
+    },
+    {
+      "id": "qin-yue",
+      "name": "秦越",
+      "role": "宋以安的前夫，秦氏集团总裁，越羞辱宋以安公司越亏，最终一无所有跪求复婚",
+      "voice": "Andre",
+      "s1_voice": "Andre",
+      "image_prompt": "Vertical 9:16 realistic modern Chinese urban drama character key art, Qin Yue, an arrogant handsome man in his early thirties, slicked dark hair, cold contemptuous eyes, sharp charcoal luxury suit, standing outside a civil affairs bureau throwing a bank card, wealthy CEO turning to ruin, no text, no watermark."
+    },
+    {
+      "id": "bai-xiaoman",
+      "name": "白小蛮",
+      "role": "秦越的白月光，看似柔弱纯情，实为白氏做空秦氏的操盘者",
+      "voice": "Tina",
+      "s1_voice": "Tina",
+      "image_prompt": "Vertical 9:16 realistic modern Chinese urban drama character key art, Bai Xiaoman, a delicate innocent-looking young woman, soft wavy hair, gentle deceptive smile, pale pink dress with an expensive handbag, clinging to a man's arm while her eyes calculate coldly, hidden manipulator behind a white-moonlight facade, no text, no watermark."
+    }
+  ],
+  "ending": {
+    "title": "离开错的人之后，我自己成了资本",
+    "text": "所谓前任破产系统，从来不是让我回头，而是让我看清：离开错的人之后，我自己也能成为资本。",
+    "variants": [
+      {
+        "when": {
+          "control": 3,
+          "truth": 2
+        },
+        "title": "收购者",
+        "text": "秦越跪在你面前求复婚。你低头笑了：复婚就不必了，秦氏我已经收购了。白小蛮的做空局，反而成了你接盘的价格。"
+      },
+      {
+        "when": {
+          "truth": 3
+        },
+        "title": "揭局者",
+        "text": "你把白氏做空秦氏的全部证据摊在董事会上。秦越输的从来不是你，而是他以为爱他的人。你看清了局，也拿回了公道。"
+      },
+      {
+        "when": {
+          "assets": 3
+        },
+        "title": "旁观者",
+        "text": "你什么都没做，只是签完字转身离开。秦越越是高调羞辱你，公司亏得越惨。看着他震惊的样子，你第一次觉得离婚也挺爽。"
+      },
+      {
+        "when": {},
+        "title": "未完的系统",
+        "text": "系统还在低声播报资产缩水。你把银行卡还给秦越，转身走进属于自己的电梯。清算才刚刚开始。"
+      }
+    ]
+  },
+  "start": "bankrupt-ex-c1-setup",
+  "nodes": {
+    "bankrupt-ex-c1-setup": {
+      "type": "cutscene",
+      "chapter": "第1章 · 离婚当天",
+      "title": "银行卡砸在我脸上",
+      "narration": "离婚当天，秦越带着白月光出现在民政局门口，当着所有人的面把一张银行卡扔给我：“拿着钱走人，你不配做秦太太。”我没哭也没闹，签完字转身离开。可刚走出大门，脑海里响起一道机械音：前任破产系统，绑定成功。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "song-yian",
+          "qin-yue",
+          "bai-xiaoman"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Song Yian, Qin Yue and Bai Xiaoman faces, outfits, daylight lighting, props, and screen direction consistent with the supplied character references. Outside a Chinese civil affairs bureau, arrogant Qin Yue throws a bank card at composed Song Yian while Bai Xiaoman clings to his arm; onlookers turn to stare. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Song Yian does not cry; she calmly signs the divorce papers and turns to walk away as Qin Yue sneers behind her. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Song Yian steps out of the bureau doors; her eyes shift as she hears an impossible mechanical system voice, a faint cold-blue interface glow flickering across her face. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "bankrupt-ex-c1-s1"
+    },
+    "bankrupt-ex-c1-s1": {
+      "type": "interactive",
+      "chapter": "第1章 · 离婚当天",
+      "title": "系统绑定成功",
+      "prompt": "系统低声播报：“检测到前夫羞辱宿主一次，秦氏集团资产缩水百分之一。”话音未落，秦越的助理慌张跑来：“秦总不好了，公司刚丢了一个亿的合同！”宋以安小声问你：这系统到底是什么，我现在该冷眼旁观，还是先弄清它的规则？",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "song-yian",
+      "interaction_reason": "这是系统第一次出现，也是全剧爽点的起点。玩家要帮宋以安从被羞辱的震惊里稳住，弄清系统的因果规则。",
+      "current_goal": "承认震惊但保持冷静；复述系统规则——前夫每羞辱一次，秦氏资产缩水；把对话收束到冷眼旁观或暗中记录两个正式选择。",
+      "forbidden": "不得提前揭露白月光家族做空秦氏，不得承诺立刻复仇或收购，不得新增第三个正式选择。",
+      "next": "bankrupt-ex-c1-choice"
+    },
+    "bankrupt-ex-c1-choice": {
+      "type": "choice",
+      "chapter": "第1章 · 离婚当天 · 正式抉择",
+      "title": "第一反应",
+      "prompt": "系统已绑定。宋以安要冷眼旁观让秦越自己作，还是暗中记录每一次羞辱和资产变化？",
+      "options": [
+        {
+          "id": "watch-cold",
+          "label": "冷眼旁观，让他越骂越穷",
+          "tone": "assets",
+          "state_delta": {
+            "assets": 1,
+            "system": 1
+          },
+          "next": "bankrupt-ex-c1-result-watch"
+        },
+        {
+          "id": "record-quiet",
+          "label": "暗中记录规则与每一笔损失",
+          "tone": "control",
+          "state_delta": {
+            "system": 1,
+            "control": 1
+          },
+          "next": "bankrupt-ex-c1-result-record"
+        }
+      ]
+    },
+    "bankrupt-ex-c1-result-watch": {
+      "type": "cutscene",
+      "chapter": "第1章 · 离婚当天 · 结果",
+      "title": "离婚也挺爽",
+      "narration": "宋以安什么都没做，只是看着秦越震惊的脸。助理的电话一个接一个：合同没了，客户跑了。她第一次觉得，离婚也挺爽。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "song-yian",
+          "qin-yue"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Song Yian and Qin Yue faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Qin Yue's face turns from contempt to shock as his assistant rushes over with a phone; Song Yian watches calmly from a distance. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Multiple calls flood Qin Yue's phone; his expression cracks with panic while Song Yian's lips curve into the faintest satisfied smile. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Song Yian turns and walks toward the city street, the cold-blue system interface glow briefly reflecting in her calm eyes. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "bankrupt-ex-c2-setup"
+    },
+    "bankrupt-ex-c1-result-record": {
+      "type": "cutscene",
+      "chapter": "第1章 · 离婚当天 · 结果",
+      "title": "每一笔都记下",
+      "narration": "宋以安打开手机备忘录，把系统的每一条播报、秦氏的每一笔损失都记了下来。她意识到，这不只是复仇，更是一份正在成形的清算清单。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "song-yian"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Song Yian's face, outfit, lighting, props, and screen direction consistent with the supplied character reference. Song Yian sits in a quiet cafe, opening a notes app on her phone, a faint cold-blue system interface reflected in her glasses. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep face, outfit, lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. She methodically types each system announcement and asset loss into a growing list, eyes focused and cold. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep face, outfit, lighting, props, and screen direction consistent with the supplied character reference. Continue directly from the previous segment without a reset or title card. Song Yian looks up from the phone, a quiet resolve settling on her face as the list of Qin family losses scrolls. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "bankrupt-ex-c2-setup"
+    },
+    "bankrupt-ex-c2-setup": {
+      "type": "cutscene",
+      "chapter": "第2章 · 越骂越穷",
+      "title": "他越高调，公司越惨",
+      "narration": "接下来几天，秦越越是高调羞辱我，公司亏得越惨。他带白月光参加晚宴，股票跌停；他公开说我贪财，合作方集体解约；他骂我离不开他，银行直接冻结贷款。秦越终于慌了：“宋以安，你到底做了什么？”",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "qin-yue",
+          "bai-xiaoman",
+          "song-yian"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Qin Yue, Bai Xiaoman and Song Yian faces, outfits, lighting, props, and screen direction consistent with the supplied character references. At a glittering banquet Qin Yue proudly parades Bai Xiaoman; on a nearby screen a stock chart crashes to its limit-down. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Montage feel: partners walk out of a boardroom tearing up contracts while a bank freeze notice glows red on a laptop. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. A rattled Qin Yue grabs his phone and stares at Song Yian across a lobby, mouthing panic, while she stays composed. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "bankrupt-ex-c2-s1"
+    },
+    "bankrupt-ex-c2-s1": {
+      "type": "interactive",
+      "chapter": "第2章 · 越骂越穷",
+      "title": "我从来不是来爱你的",
+      "prompt": "系统发布隐藏任务：白月光家族正在做空秦氏。此刻，玩家以第一人称面对白小蛮。她还摆着那副纯情柔弱的表情，轻声问你：你是来替宋以安问我的吧？你可以追问她到底图什么，也可以试探她是否真心爱秦越。",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "bai-xiaoman",
+      "interaction_reason": "全剧最大反转：玩家近距离面对伪装纯情的做空操盘者。柔弱外表和冷算计之间的落差，是这个节点最强的戏剧张力。",
+      "current_goal": "维持柔弱外表和语气；被追问时用暧昧的措辞一步步暗示真实野心——秦家的资产，不是秦越这个人；把对话收束到玩家要不要深挖做空局的两个正式选择。",
+      "forbidden": "不得完全撕破伪装直接承认做空；不得站到宋以安一边；不得主动泄露做空的具体手段；不得改写正式分支。",
+      "next": "bankrupt-ex-c2-choice"
+    },
+    "bankrupt-ex-c2-choice": {
+      "type": "choice",
+      "chapter": "第2章 · 越骂越穷 · 正式抉择",
+      "title": "看清这盘局",
+      "prompt": "面对白氏做空秦氏的隐藏真相，宋以安要深挖做空局掌握主动，还是继续放任让秦氏自然崩盘？",
+      "options": [
+        {
+          "id": "dig-truth",
+          "label": "深挖白氏做空局，握住真相与筹码",
+          "tone": "truth",
+          "state_delta": {
+            "truth": 2,
+            "control": 1
+          },
+          "next": "bankrupt-ex-c2-result-dig"
+        },
+        {
+          "id": "let-collapse",
+          "label": "继续放任，看秦氏自己崩盘",
+          "tone": "assets",
+          "state_delta": {
+            "assets": 2,
+            "system": 1
+          },
+          "next": "bankrupt-ex-c2-result-collapse"
+        }
+      ]
+    },
+    "bankrupt-ex-c2-result-dig": {
+      "type": "cutscene",
+      "chapter": "第2章 · 越骂越穷 · 结果",
+      "title": "布局者浮出水面",
+      "narration": "宋以安顺着资金链一路查下去，白氏做空秦氏的每一笔头寸都浮出水面。她终于明白：白月光爱的从来不是秦越，而是整个秦家。真相，成了她手里最重的筹码。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "song-yian",
+          "bai-xiaoman"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Song Yian and Bai Xiaoman faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Song Yian in a dim office traces a web of financial documents and short-selling records pinned across a glass wall. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. A flashback flash: Bai Xiaoman's gentle smile drops to a cold calculating stare as she signs a short-selling order. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Song Yian gathers the printed evidence, her eyes hardening into control as the cold-blue system glow marks the hidden task complete. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "bankrupt-ex-c3-setup"
+    },
+    "bankrupt-ex-c2-result-collapse": {
+      "type": "cutscene",
+      "chapter": "第2章 · 越骂越穷 · 结果",
+      "title": "任它崩塌",
+      "narration": "宋以安没有出手，只是看着秦氏在秦越一次次高调羞辱里加速崩塌。系统的进度条一格格填满，而白月光的做空局，也在暗处悄悄收网。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "song-yian",
+          "qin-yue"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Song Yian and Qin Yue faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Qin Yue rages in a half-empty office as staff carry out boxes; the company visibly unravels around him. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Song Yian watches distant news of the crash on a screen, unmoved, as a system progress bar quietly fills in cold-blue glow. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. In shadow behind the collapse, a hint of an unseen hand tightening a net; Song Yian's calm face suggests she senses more than she says. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "bankrupt-ex-c3-setup"
+    },
+    "bankrupt-ex-c3-setup": {
+      "type": "cutscene",
+      "chapter": "第3章 · 跪求复婚",
+      "title": "他终于慌了",
+      "narration": "秦越一无所有。白月光当着他的面撕下伪装：“你现在一无所有了，还以为自己是秦总吗？”秦越终于慌了，跪在我面前求我：“以安，我错了，我们复婚吧。”我低头看着他，笑了。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "qin-yue",
+          "bai-xiaoman",
+          "song-yian"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Qin Yue, Bai Xiaoman and Song Yian faces, outfits, lighting, props, and screen direction consistent with the supplied character references. In a stripped-bare office, Bai Xiaoman drops her sweet mask and coldly mocks a broken Qin Yue before walking out. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Qin Yue drops to his knees before Song Yian, begging, his arrogance gone. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Song Yian looks down at the kneeling Qin Yue and lets out a faint, unreadable smile, fully in control. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "bankrupt-ex-c3-s1"
+    },
+    "bankrupt-ex-c3-s1": {
+      "type": "interactive",
+      "chapter": "第3章 · 跪求复婚",
+      "title": "我错了，我们复婚吧",
+      "prompt": "白月光当众扔下秦越，你一无所有地跪在宋以安面前。以秦越第一人称，玩家面对的是你的崩溃与悔恨。你可以向玩家倾诉——你当初为什么那么对她，你现在才明白什么。玩家可以安慰、追问、也可以沉默。",
+      "live_mode": "vidu-s1-first-person",
+      "avatar_character": "qin-yue",
+      "interaction_reason": "终局前让玩家以第一人称感受秦越的彻底崩塌——傲慢总裁跪地时的羞耻与后悔，是宋以安那句「复婚不必了」最有力的反衬。",
+      "current_goal": "坦承自己的傲慢与错误；表达对宋以安的后悔而非执念；不强求玩家给结论，接受安慰也接受沉默；把对话收束到宋以安最终回应的两个正式选择。",
+      "forbidden": "不得强迫或威胁宋以安；不得否认自己的过错；不得提前宣布宋以安的终局选择；不得新增第三个正式选择。",
+      "next": "bankrupt-ex-c3-choice"
+    },
+    "bankrupt-ex-c3-choice": {
+      "type": "choice",
+      "chapter": "第3章 · 跪求复婚 · 终局抉择",
+      "title": "我的答案",
+      "prompt": "面对跪地求复婚的秦越，宋以安要给出怎样的终局答案？",
+      "options": [
+        {
+          "id": "announce-acquire",
+          "label": "复婚不必了——秦氏，我已经收购了",
+          "tone": "control",
+          "state_delta": {
+            "control": 2
+          },
+          "next": "bankrupt-ex-c3-result-acquire"
+        },
+        {
+          "id": "expose-short",
+          "label": "把白氏做空秦氏的真相当众摊开",
+          "tone": "truth",
+          "state_delta": {
+            "truth": 1,
+            "control": 1
+          },
+          "next": "bankrupt-ex-c3-result-expose"
+        }
+      ]
+    },
+    "bankrupt-ex-c3-result-acquire": {
+      "type": "cutscene",
+      "chapter": "第3章 · 跪求复婚 · 结果",
+      "title": "秦氏，我已经收购了",
+      "narration": "“复婚就不必了。秦氏，我已经收购了。”那一刻我终于明白，所谓前任破产系统，从来不是让我回头，而是让我看清：离开错的人之后，我自己也能成为资本。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "song-yian",
+          "qin-yue"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Song Yian and Qin Yue faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Song Yian calmly places an acquisition document on the desk before the kneeling Qin Yue, whose face collapses in disbelief. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. She turns and walks toward a glass elevator in a gleaming corporate tower, now the owner of the company. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. The elevator doors close on Song Yian's confident face as the cold-blue system interface fades to done; city skyline behind her. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "bankrupt-ex-ending"
+    },
+    "bankrupt-ex-c3-result-expose": {
+      "type": "cutscene",
+      "chapter": "第3章 · 跪求复婚 · 结果",
+      "title": "当众揭局",
+      "narration": "我把白氏做空秦氏的全部证据摊在所有人面前。秦越输的从来不是我，而是他以为爱他的白月光。看清了局，我也拿回了属于自己的公道。",
+      "pre_generated": true,
+      "render_plan": {
+        "target_seconds": 15,
+        "clip_seconds": 5,
+        "method": "three-continuous-q3-clips-then-concat",
+        "cast": [
+          "song-yian",
+          "bai-xiaoman",
+          "qin-yue"
+        ],
+        "clips": [
+          {
+            "id": "s1",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 1 of a continuous three-segment 15-second vertical FMV scene. Keep Song Yian, Bai Xiaoman and Qin Yue faces, outfits, lighting, props, and screen direction consistent with the supplied character references. In a boardroom Song Yian projects the short-selling evidence onto a big screen before shocked executives. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s2",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 2 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Bai Xiaoman's mask shatters as security closes in; Qin Yue stares in stunned realization. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          },
+          {
+            "id": "s3",
+            "duration": 5,
+            "model": "viduq3-mix",
+            "prompt": "Segment 3 of a continuous three-segment 15-second vertical FMV scene. Keep faces, outfits, lighting, props, and screen direction consistent with the supplied character references. Continue directly from the previous segment without a reset or title card. Song Yian gathers her documents and walks out with quiet dignity as the system marks the truth revealed. Chinese modern urban drama, realistic acting, natural motion and sound, no captions, no subtitles, no watermark."
+          }
+        ]
+      },
+      "next": "bankrupt-ex-ending"
+    },
+    "bankrupt-ex-ending": {
+      "type": "ending",
+      "chapter": "终章",
+      "title": "离开错的人之后，我自己成了资本",
+      "text": "所谓前任破产系统，从来不是让我回头，而是让我看清：离开错的人之后，我自己也能成为资本。",
+      "variants": [
+        {
+          "when": {
+            "control": 3,
+            "truth": 2
+          },
+          "title": "收购者",
+          "text": "秦越跪在你面前求复婚。你低头笑了：复婚就不必了，秦氏我已经收购了。白小蛮的做空局，反而成了你接盘的价格。"
+        },
+        {
+          "when": {
+            "truth": 3
+          },
+          "title": "揭局者",
+          "text": "你把白氏做空秦氏的全部证据摊在董事会上。秦越输的从来不是你，而是他以为爱他的人。你看清了局，也拿回了公道。"
+        },
+        {
+          "when": {
+            "assets": 3
+          },
+          "title": "旁观者",
+          "text": "你什么都没做，只是签完字转身离开。秦越越是高调羞辱你，公司亏得越惨。看着他震惊的样子，你第一次觉得离婚也挺爽。"
+        },
+        {
+          "when": {},
+          "title": "未完的系统",
+          "text": "系统还在低声播报资产缩水。你把银行卡还给秦越，转身走进属于自己的电梯。清算才刚刚开始。"
+        }
+      ]
+    }
+  }
+}

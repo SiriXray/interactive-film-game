@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070b13">
+  <title>Vidu 互动影游</title>
+  <script>
+    if (location.protocol === "file:") {
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.innerHTML = "<main style='max-width:680px;margin:12vh auto;padding:28px;font-family:Microsoft YaHei UI,sans-serif;line-height:1.7'><h1>请通过本地服务打开互动影游</h1><p>file:// 无法安全访问服务端 Vidu API，也不会加载预生成任务状态。</p><p>在项目目录运行 <code>py -3.14 app.py</code>，然后打开 <a href='http://127.0.0.1:5100/'>http://127.0.0.1:5100/</a>。</p></main>";
+      });
+    }
+  </script>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <main id="app">
+    <section id="library-screen" class="screen active">
+      <header class="library-topbar">
+        <a class="wordmark" href="/" aria-label="Vidu 互动影游首页"><span class="wordmark-v">V</span><span>Vidu <i>互动影游</i></span></a>
+        <button id="production-open" class="ghost-control" aria-haspopup="dialog">制作状态 <span class="control-dot" aria-hidden="true"></span></button>
+      </header>
+
+      <section class="library-stage" aria-label="互动剧库">
+        <div class="library-atmosphere" aria-hidden="true"></div>
+        <div class="library-intro">
+          <p>VIDU INTERACTIVE FILM</p>
+          <h1>这一幕，<br><em>由你决定。</em></h1>
+          <span>选择一段命运，走进故事。</span>
+        </div>
+        <section id="story-grid" class="story-grid" aria-label="选择一个互动故事"></section>
+      </section>
+    </section>
+
+    <section id="story-screen" class="screen story-screen" data-palette="snow">
+      <div id="visual-backdrop" class="visual-backdrop" aria-hidden="true"></div>
+      <div class="visual-wash" aria-hidden="true"></div>
+
+      <header class="player-topbar player-chrome">
+        <button id="story-back" class="round-control" aria-label="返回剧库"><span aria-hidden="true">←</span></button>
+        <div class="player-title"><span id="player-story-title"></span><small id="chapter-label"></small></div>
+        <div class="player-actions">
+          <button id="player-sound" class="round-control" aria-label="静音或开启声音"><span id="sound-icon" aria-hidden="true">◖</span></button>
+          <button id="path-toggle" class="round-control route-control" aria-label="查看你的选择"><span aria-hidden="true">⌁</span><b id="route-count">0</b></button>
+        </div>
+      </header>
+
+      <section id="fmv-view" class="view fmv-view" aria-live="polite">
+        <div class="film-frame">
+          <div id="video-poster" class="video-poster" aria-hidden="true"></div>
+          <video id="cutscene-video" playsinline preload="metadata" aria-label="剧情片段"></video>
+          <button id="video-toggle" class="film-play-toggle" aria-label="播放或暂停剧情片段"><span aria-hidden="true">Ⅱ</span></button>
+          <div id="cutscene-empty" class="scene-limbo">
+            <span id="cutscene-status" class="scene-status">正在显影</span>
+            <h2 id="cutscene-title"></h2>
+            <p id="cutscene-narration"></p>
+            <p class="limbo-line">这段影像还在路上。</p>
+            <button id="cutscene-continue" class="limbo-action">先听完这一幕 <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+        <div class="film-caption player-chrome">
+          <span id="media-label" class="caption-mode">FILM</span>
+          <p id="video-narration"></p>
+          <div id="cutscene-next-bar" class="caption-action hidden"><button id="cutscene-next" class="continue-button">继续 <span aria-hidden="true">→</span></button></div>
+        </div>
+      </section>
+
+      <section id="choice-view" class="view choice-view" aria-live="polite">
+        <div class="choice-stage">
+          <p id="choice-chapter" class="choice-kicker">命运正在等待</p>
+          <h2 id="choice-prompt"></h2>
+          <p class="choice-whisper">她会记住你如何选择。</p>
+          <div id="choice-options" class="choice-options"></div>
+        </div>
+      </section>
+
+      <section id="live-view" class="view live-view" aria-live="polite">
+        <video id="remote-video" playsinline autoplay aria-label="主角实时画面"></video>
+        <video id="local-video" playsinline autoplay muted aria-label="本地预览"></video>
+        <div class="live-wash" aria-hidden="true"></div>
+        <div class="live-top player-chrome"><div class="live-left"><button id="live-back" class="live-back" aria-label="退出实时对话"><span aria-hidden="true">←</span></button><span class="live-chip"><i></i> LIVE · 第一人称</span></div><span id="live-status">她正在等你</span></div>
+        <p id="live-subtitle" class="live-subtitle hidden" aria-live="polite"></p>
+        <div id="live-invite" class="live-invite">
+          <div id="live-avatar" class="live-avatar" aria-hidden="true"></div>
+          <p id="live-mode" class="live-overline">现在，和她说句话</p>
+          <h2 id="live-prompt"></h2>
+          <p id="live-reason" class="live-reason"></p>
+          <ul id="live-directives" class="live-directives hidden" aria-label="可尝试的实时指令"></ul>
+          <button id="live-start" class="live-start-button"><span aria-hidden="true">●</span> 开始对话</button>
+          <div id="live-progress" class="live-progress" role="status" aria-live="polite"><i></i><i></i><i></i><span id="live-progress-label">正在连接</span></div>
+          <small>第一人称实时画面将在连接后出现</small>
+        </div>
+        <div class="live-controls player-chrome"><button id="live-nudge" class="live-nudge" disabled hidden>让TA先开口</button><button id="live-next" class="continue-button" disabled>我想好了 <span aria-hidden="true">→</span></button></div>
+      </section>
+
+      <section id="ending-view" class="view ending-view" aria-live="polite">
+        <div class="ending-card">
+          <p>这一程，走到了这里</p>
+          <h2 id="ending-title"></h2>
+          <p id="ending-text"></p>
+          <div id="ending-variant" class="ending-variant"></div>
+          <button id="restart-story" class="continue-button">再走一次 <span aria-hidden="true">↻</span></button>
+        </div>
+      </section>
+
+      <div id="companion-list" class="companion-list player-chrome" aria-label="本章角色"></div>
+    </section>
+
+    <aside id="path-panel" class="path-panel" aria-label="你的选择路径">
+      <div class="panel-head"><div><span>你的足迹</span><strong id="route-title">这一局的选择</strong></div><button id="path-close" class="round-control" aria-label="关闭选择路径">×</button></div>
+      <ol id="path-list"></ol>
+      <div class="path-vitals"><span>此刻的影响</span><div id="state-list"></div></div>
+    </aside>
+  </main>
+
+  <dialog id="production-drawer" class="production-drawer" aria-labelledby="production-heading">
+    <div class="production-head"><div><span>仅制作时需要</span><h2 id="production-heading">制作状态</h2></div><button id="production-close" class="round-control" aria-label="关闭制作状态">×</button></div>
+    <p id="production-note" class="production-note">影像会在后台安静准备。</p>
+    <div class="production-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="production-summary"><div><small>角色</small><b id="overview-images">-</b></div><div><small>S1 形象</small><b id="overview-s1">-</b></div><div><small>分镜</small><b id="overview-clips">-</b></div><div><small>成片</small><b id="overview-movies">-</b></div></div>
+    <p id="production-summary" class="production-state">读取中</p>
+    <div class="production-actions"><button id="submit-images" class="drawer-button">生成角色与 S1 形象</button><button id="submit-videos" class="drawer-button">提交下一批</button><button id="resume-production" class="drawer-button primary">继续全量生产</button></div>
+    <button id="refresh-production" class="drawer-refresh">刷新任务状态</button>
+    <p id="production-message" class="production-message" role="status"></p>
+    <span id="api-indicator" class="api-indicator">检查本地配置</span>
+  </dialog>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

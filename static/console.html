@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071014">
+  <title>Vidu S1 实时数字人控制台</title>
+  <link rel="stylesheet" href="/static/console.css">
+</head>
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <header class="topbar">
+    <a class="brand" href="/console" aria-label="Vidu S1 控制台首页">
+      <span class="brand-mark" aria-hidden="true">S1</span>
+      <span class="brand-copy"><strong>实时数字人控制台</strong><small>LIVE OPERATOR</small></span>
+    </a>
+    <div class="topbar-actions">
+      <span id="api-badge" class="status-badge is-checking"><i aria-hidden="true"></i><span id="api-badge-text">服务检测中</span></span>
+      <a class="quiet-link" href="/">互动影游</a>
+    </div>
+  </header>
+
+  <main class="console-grid">
+    <section class="panel config-panel" aria-labelledby="config-title">
+      <div class="panel-title">
+        <div><span class="eyebrow">PRESET</span><h1 id="config-title">角色与策略</h1></div>
+        <span class="section-state">会前</span>
+      </div>
+
+      <div class="asset-toolbar">
+        <label class="sr-only" for="asset-select">数字人资产</label>
+        <select id="asset-select"><option value="">新建数字人资产</option></select>
+        <button id="save-asset-btn" class="compact-btn" type="button">存为资产</button>
+        <button id="delete-asset-btn" class="icon-text-btn" type="button" disabled>删除</button>
+      </div>
+
+      <div class="field">
+        <label>通话模式</label>
+        <div id="mode-switch" class="segmented" role="radiogroup" aria-label="通话模式">
+          <button type="button" class="seg active" data-mode="video" role="radio" aria-checked="true">音视频</button>
+          <button type="button" class="seg" data-mode="audio" role="radio" aria-checked="false">纯音频</button>
+        </div>
+      </div>
+
+      <div class="field two-col">
+        <div><label for="name">角色名称</label><input id="name" type="text" maxlength="20" placeholder="甜甜" autocomplete="off"></div>
+        <div><label for="voice">音色</label><select id="voice"></select></div>
+      </div>
+
+      <div class="field">
+        <label for="persona">角色人设 <b class="required">*</b><span id="persona-count" class="count">0</span></label>
+        <textarea id="persona" rows="5" placeholder="身份、专业领域、表达方式、边界与互动目标"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="greeting">数字人开场白</label>
+        <textarea id="greeting" rows="2" maxlength="200" placeholder="接通后数字人主动对你说的第一句话，例如：你好呀，想听我唱哪首歌？"></textarea>
+        <span id="greeting-count" class="field-counter">0 / 200</span>
+      </div>
+
+      <div class="field">
+        <label>形象图 <b class="required">*</b></label>
+        <div class="avatar-control">
+          <div id="avatar-preview" class="avatar-preview" aria-label="形象预览"><span>NO IMAGE</span></div>
+          <div class="avatar-inputs">
+            <input id="image-url" type="url" placeholder="https://.../avatar.png" autocomplete="off">
+            <label class="upload-btn">选择本地图片<input id="image-file" type="file" accept="image/png,image/jpeg,image/webp" hidden></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"><span>核心能力</span></div>
+      <div class="toggle-list">
+        <label class="toggle-row"><span><strong>实时双向转写</strong><small>字幕与会话留存</small></span><input id="transcription-enabled" type="checkbox" checked><i aria-hidden="true"></i></label>
+        <label class="toggle-row"><span><strong>动作控制</strong><small>对话驱动姿态与动作</small></span><input id="extra-motion-enabled" type="checkbox" checked><i aria-hidden="true"></i></label>
+      </div>
+
+      <div class="retrieval-list">
+        <div class="retrieval-block">
+          <label class="retrieval-head"><span><strong>长期记忆</strong><small>外部 Memory Retrieval</small></span><input id="memory-enabled" type="checkbox"><i aria-hidden="true"></i></label>
+          <div id="memory-fields" class="retrieval-fields hidden">
+            <input id="memory-endpoint" type="url" placeholder="https://api.example.com/memory/search" autocomplete="off">
+            <div class="retrieval-row"><input id="memory-authorization" type="password" placeholder="Authorization" autocomplete="new-password"><input id="memory-timeout" type="number" min="100" max="30000" value="3000" aria-label="长期记忆超时毫秒"></div>
+          </div>
+        </div>
+        <div class="retrieval-block">
+          <label class="retrieval-head"><span><strong>专业知识库</strong><small>外部 Knowledge Retrieval</small></span><input id="knowledge-enabled" type="checkbox"><i aria-hidden="true"></i></label>
+          <div id="knowledge-fields" class="retrieval-fields hidden">
+            <input id="knowledge-endpoint" type="url" placeholder="https://api.example.com/knowledge/search" autocomplete="off">
+            <div class="retrieval-row"><input id="knowledge-authorization" type="password" placeholder="Authorization" autocomplete="new-password"><input id="knowledge-timeout" type="number" min="100" max="30000" value="3000" aria-label="专业知识库超时毫秒"></div>
+          </div>
+        </div>
+      </div>
+
+      <details class="advanced">
+        <summary>对话策略与低延迟参数</summary>
+        <div class="advanced-body">
+          <div class="field two-col">
+            <div><label for="vad-type">打断策略</label><select id="vad-type"><option value="server">Server</option><option value="semantic">Semantic</option></select></div>
+            <div><label for="vad-threshold">打断灵敏度</label><input id="vad-threshold" type="number" min="0" max="1" step="0.05" value="0.5"></div>
+          </div>
+          <div class="field two-col">
+            <div><label for="vad-silence">静音判定 ms</label><input id="vad-silence" type="number" min="200" max="6000" step="100" value="400"></div>
+            <div><label for="vad-idle">主动问询 ms</label><input id="vad-idle" type="number" min="0" max="30000" step="500" value="6000"></div>
+          </div>
+          <div class="field three-col">
+            <div><label for="llm-temperature">创意度</label><input id="llm-temperature" type="number" min="0" max="2" step="0.1" value="0.7"></div>
+            <div><label for="llm-top-p">Top P</label><input id="llm-top-p" type="number" min="0" max="1" step="0.05" value="0.8"></div>
+            <div><label for="llm-top-k">Top K</label><input id="llm-top-k" type="number" min="0" max="100" step="1" value="20"></div>
+          </div>
+          <div class="field three-col">
+            <div><label for="llm-frequency">重复抑制</label><input id="llm-frequency" type="number" min="-2" max="2" step="0.1" value="1"></div>
+            <div><label for="llm-presence">话题广度</label><input id="llm-presence" type="number" min="0" max="2" step="0.1" value="0.3"></div>
+            <div><label for="llm-max-tokens">回复上限</label><input id="llm-max-tokens" type="number" min="1" max="65536" step="1" value="120"></div>
+          </div>
+          <div class="field two-col">
+            <div><label for="llm-seed">Seed</label><input id="llm-seed" type="number" min="-1" max="2147483647" value="-1"></div>
+            <div><label for="session-idle">会话静默断开 s</label><input id="session-idle" type="number" min="10" max="7200" value="600"></div>
+          </div>
+        </div>
+      </details>
+
+      <div class="session-actions">
+        <button id="start-btn" class="primary-btn" type="button"><span class="btn-signal" aria-hidden="true"></span><span id="start-label">创建并连接</span></button>
+        <button id="hangup-btn" class="danger-btn" type="button" disabled>结束会话</button>
+      </div>
+    </section>
+
+    <section class="panel stage-panel" aria-labelledby="stage-title">
+      <div class="stage-header">
+        <div><span class="eyebrow">LIVE STAGE</span><h2 id="stage-title">实时互动</h2></div>
+        <div class="stage-status">
+          <span id="stage-phase" class="phase-chip phase-idle"><i aria-hidden="true"></i><span id="phase-text">待命</span></span>
+          <span class="elapsed"><small>SESSION</small><b id="elapsed">00:00</b></span>
+        </div>
+      </div>
+
+      <div id="stage" class="stage">
+        <video id="remote-video" playsinline autoplay aria-label="数字人实时画面"></video>
+        <video id="local-video" playsinline autoplay muted aria-label="本地视频预览"></video>
+        <div id="stage-idle" class="stage-idle">
+          <div class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <strong>等待会话</strong>
+          <span>Vidu S1 / AliRTC / WebSocket</span>
+        </div>
+        <div id="connecting-overlay" class="connecting-overlay hidden" aria-hidden="true">
+          <div class="connecting-meter" aria-hidden="true"><i></i></div>
+          <p id="connecting-text">正在创建会话</p>
+        </div>
+        <div id="subtitle-layer" class="subtitle-layer" aria-live="polite">
+          <p id="subtitle-avatar" class="subtitle subtitle-avatar hidden"><small>数字人</small><span></span></p>
+          <p id="subtitle-user" class="subtitle subtitle-user hidden"><small>用户</small><span></span></p>
+        </div>
+      </div>
+
+      <div class="stage-footer">
+        <span id="mic-chip" class="media-chip"><i aria-hidden="true"></i>麦克风</span>
+        <span id="mode-chip" class="media-chip">音视频</span>
+        <span id="motion-chip" class="media-chip">动作已启用</span>
+      </div>
+
+      <section class="interaction-console" aria-labelledby="interaction-title">
+        <div class="interaction-head"><h3 id="interaction-title">会中控制</h3><span id="message-status">接通后可发送</span></div>
+        <div class="message-composer">
+          <label class="sr-only" for="message-input">文字消息或动作指令</label>
+          <textarea id="message-input" rows="2" maxlength="1000" placeholder="输入对话、讲解要求或动作指令" disabled></textarea>
+          <button id="send-message-btn" class="send-btn" type="button" disabled>发送</button>
+        </div>
+        <div class="command-strip" aria-label="快捷动作和主动互动">
+          <button type="button" class="command-btn" data-command="请看向镜头，微笑并自然挥手问候用户。">挥手问候</button>
+          <button type="button" class="command-btn" data-command="请点头确认，并用一个清晰手势强调接下来最重要的信息。">点头强调</button>
+          <button type="button" class="command-btn" data-command="请进入专注倾听状态，保持自然眼神交流并等待用户表达。">专注倾听</button>
+          <button type="button" class="command-btn proactive" data-command="请结合当前对话主动提出一个自然、具体且容易回答的问题，继续了解用户需求。">主动问询</button>
+        </div>
+      </section>
+    </section>
+
+    <aside class="panel telemetry-panel" aria-labelledby="telemetry-title">
+      <div class="panel-title">
+        <div><span class="eyebrow">OBSERVABILITY</span><h2 id="telemetry-title">能力与记录</h2></div>
+        <span class="section-state">会中 / 会后</span>
+      </div>
+
+      <div class="capability-list" aria-label="本次会话能力状态">
+        <div class="capability"><span><i class="cap-dot" aria-hidden="true"></i><strong>长期记忆</strong></span><b id="cap-memory">未启用</b></div>
+        <div class="capability"><span><i class="cap-dot" aria-hidden="true"></i><strong>专业知识库</strong></span><b id="cap-knowledge">未启用</b></div>
+        <div class="capability"><span><i class="cap-dot" aria-hidden="true"></i><strong>动作控制</strong></span><b id="cap-motion">已启用</b></div>
+        <div class="capability"><span><i class="cap-dot" aria-hidden="true"></i><strong>双向转写</strong></span><b id="cap-transcription">已启用</b></div>
+        <div class="capability"><span><i class="cap-dot" aria-hidden="true"></i><strong>主动问询</strong></span><b id="cap-proactive">6.0s</b></div>
+      </div>
+
+      <div class="metric-grid">
+        <div><small>会话状态</small><b id="tele-status">-</b></div>
+        <div><small>首响延迟</small><b id="tele-latency">-</b></div>
+        <div><small>就绪耗时</small><b id="tele-ready">-</b></div>
+        <div><small>转写条数</small><b id="tele-transcripts">0</b></div>
+        <div><small>计费秒数</small><b id="tele-billed">-</b></div>
+        <div><small>已耗积分</small><b id="tele-credits">-</b></div>
+      </div>
+      <div class="live-id-row"><small>LIVE ID</small><code id="tele-liveid">-</code></div>
+
+      <div class="transcript-head">
+        <div><h3>会话转写</h3><span id="persist-status">等待会话</span></div>
+        <div><button id="export-transcript" type="button" disabled>导出</button><button id="clear-transcript" type="button">清空</button></div>
+      </div>
+      <ol id="transcript-list" class="transcript-list" aria-live="polite">
+        <li id="transcript-empty" class="empty-row">暂无转写</li>
+      </ol>
+
+      <details class="event-drawer">
+        <summary>链路事件 <span id="event-count">0</span></summary>
+        <div class="log-toolbar"><button id="log-clear" type="button">清空事件</button></div>
+        <ol id="event-log" class="event-log" aria-live="polite"></ol>
+      </details>
+    </aside>
+  </main>
+
+  <script src="/static/console.js"></script>
+</body>
+</html>
